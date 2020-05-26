@@ -25,7 +25,6 @@ var downloadTimer = setInterval(function(){
 
 }
 
-// timer();
 
 
 function rollQuestions () {
@@ -62,7 +61,6 @@ function questionClickFunction() {
   if (this.value !== questions[QuestionIndex].answer) {
 
     // nope - not cool - got it wrong. 
-  // alert(this.id);
 
     timeleft -= 15;
     if (timeleft < 0) {
