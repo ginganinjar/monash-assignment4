@@ -15,6 +15,17 @@
   font-size: x-large;
 }
 
+.feedbackFont {
+
+
+    font-family: 'Countdown', arial;
+    /* color: rgb(204, 45, 45); */
+    font-size: xxx-large;
+    margin-top:2%;
+
+}
+
+
 .backgroundImage {
   background-image: url("/assets/images/stars_background.png"); 
  
@@ -33,6 +44,11 @@
   cursor: pointer;
   margin-left: 71%;
 
+}
+
+.buttonPadding {
+  padding: 1%;
+  margin-left: 4%;
 }
 =========================================== */
 * {
@@ -139,3 +155,29 @@ header a, a:visited {
 }
 
 /* end of theft */
+
+/* shake screen effect */
+
+/* Standard syntax */
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.apply-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
