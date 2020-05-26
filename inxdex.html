@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="http://allfont.net/allfont.css?fonts=countdown" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+</head>
+
+<body class="backgroundImage">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="clouds"></div>
+
+  <div class="container fluid leanLeft">
+
+    <div class="row">
+      <div class="col-md-12">
+        <a href="hscores.html" class="gameFont">High Scores</a>
+      </div>
+
+    </div>
+
+    <div class="row">
+   
+      <div class="col-md-12 offset-md-11    ">
+        <!-- the progress bar and coundown counter -->
+        <div id="invisibletimer" style="visibility:hidden">
+        <div id="counter" class="gameFont">60 Seconds Left</div>
+        <progress value="0" max="10" id="progressBar" style="width:30%;"></progress>
+      </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="textstuff" class="col-sm-6 offset-md-5">
+       <p class="directionFont"> <b>Coding Quiz Challenge </b><br>
+        Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+        will penalize your score/time by ten seconds!
+       </p>
+ 
+       <button type="button" class="btn btn-light buttonMove">Play Game</button>
+
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- toggle switch -->
+</body>
+
+</html>
