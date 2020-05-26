@@ -10,6 +10,18 @@
   color : azure;
 }
 
+.gameFontQuestionTitle {
+  font-family: 'Countdown', arial;
+  color :#94a294;
+  
+  float: left;
+  padding: 23px:;
+  display: block;
+  margin-right: 2px;
+  margin-top: -33px;
+  font-size: 60px;
+}
+
 .directionFont {
   color: burlywood;
   font-size: x-large;
@@ -25,6 +37,11 @@
 
 }
 
+
+.choicespan {
+  width : 125%;
+  
+}
 
 .backgroundImage {
   background-image: url("/assets/images/stars_background.png"); 
@@ -48,7 +65,7 @@
 
 .buttonPadding {
   padding: 1%;
-  margin-left: 4%;
+  margin-left: 1%;
 }
 =========================================== */
 * {
