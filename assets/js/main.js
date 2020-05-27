@@ -126,6 +126,7 @@ function questionClickFunction() {
     sfxRight.play();
     ResponseBox.setAttribute("style", "color:#94a294");
     ResponseBox.textContent = "Correct!";
+    // document.getElementById("marioImage").style = "visibility:visible";
     score = score + 1;
      document.getElementById("score").innerHTML = "Score : " + score;
   }
