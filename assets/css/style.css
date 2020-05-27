@@ -13,6 +13,13 @@ body {
   padding : 5%
 }
 
+.hiddencontent {
+  visibility: hidden;
+}
+.savehighscoreInput {
+ width:50px;
+ maegin-bottom : 1%;
+}
 
 .gameFontQuestionTitle {
   font-family:'Countdown'; font-weight: normal; font-style: normal;

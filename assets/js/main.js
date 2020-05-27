@@ -45,6 +45,8 @@ var downloadTimer = setInterval(function(){
     gameOver.play();
     ThegameIsOver = true;
     document.getElementById("GameContent").style = "visibility:hidden";
+
+    
     document.getElementById("introBox").style = "display:block";
     document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
     document.getElementById("FrontInfoBox").setAttribute("class", "gameFont");
@@ -52,6 +54,7 @@ var downloadTimer = setInterval(function(){
     document.getElementById("startGameButton").style = "margin-left:0%;";
     document.getElementById("feedback").style = "visibility:hidden;";
     QuestionIndex = 0;
+    document.getElementById("savescore").style = "visibility:visible";
 
 }
 
