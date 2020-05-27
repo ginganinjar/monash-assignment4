@@ -55,11 +55,6 @@ margin-left:12%;
 
 }
 
-.choicespan {
-  width : 100%;
-  position: fixed;
-margin-top:1%;
- }
 
 .fixmargins {
  padding : 1%;
@@ -131,6 +126,8 @@ margin-top:1%;
   margin-left: 71%;
 
 }
+
+/* inseerted in javascript routine */
 
 .buttonPadding {
   padding: 1%;
