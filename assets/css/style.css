@@ -1,11 +1,11 @@
 .gameFont {
-  font-family: 'Countdown', arial;
-  font-size: xxx-large;
+  font-family: 'Press Start 2P', cursive;
+  font-size: xx-large;
   color : azure;
 }
 
 .gameFontQuestionTitle {
-  font-family: 'Countdown', arial;
+  font-family: 'Press Start 2P', cursive;
   color :#94a294;
   
   float: left;
@@ -17,8 +17,9 @@
 }
 
 .directionFont {
+  font-family: 'Press Start 2P', cursive;
   color: burlywood;
-  font-size: x-large;
+  font-size: large;
   text-align: left;
   margin-bottom:unset;
   padding-top: 1%;
@@ -27,9 +28,9 @@
 .feedbackFont {
 
 
-    font-family: 'Countdown', arial;
+  font-family: 'Press Start 2P', cursive;
     /* color: rgb(204, 45, 45); */
-    font-size: xxx-large;
+    font-size: xx-large;
     margin-top:20%;
   float:left;
 
