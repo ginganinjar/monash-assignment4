@@ -96,7 +96,7 @@ document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
 
 function questionClickFunction() {
 
-    // ok you've had your fund. now disable to div so you can't have a second shot until the next go.apply-shake
+    // ok you've had your fund. now disable to div so you can't have a second shot until the next go.
     $('#choices').children().attr('disabled', 'disabled');
 
   // erm - is it OK?
