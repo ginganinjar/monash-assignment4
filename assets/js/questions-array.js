@@ -35,8 +35,8 @@ var questions = [
     {
       title:
       "What is a pseudo-class?",
-    choices: ["An object", "element changes state", "Invalid CSS", "pretend code"],
-    answer: "element changes state"
+    choices: ["An object", "special state of an element", "Invalid CSS", "pretend code"],
+    answer: "special state of an element"
     },
     {
       title:

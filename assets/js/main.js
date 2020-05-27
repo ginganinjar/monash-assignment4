@@ -37,7 +37,7 @@ var downloadTimer = setInterval(function(){
   if(timeleft <= 1){
     clearInterval(downloadTimer);
   }
-  document.getElementById("progressBar").value = (60 - timeleft) ;
+  document.getElementById("progressBar").value = (60 - timeleft) + 1 ;
   timeleft -= 1;
   
   if ((ThegameIsOver === false) && (timeleft < 1)) {
@@ -145,7 +145,13 @@ function questionClickFunction() {
     timeleft = 0;
 
   } else {
-    setTimeout(() => {rollQuestions();  }, 2000);
+    setTimeout(() => {rollQuestions();  
+      // because tre said that the timer does not pause during the questions process
+      // i've just added two seconds to the clock. the delay is important because
+      // the effects will not work without it. 
+      // because javascript is a wierd language.
+      
+    timeleft = timeleft + 2;}, 2000);
   
     
   }
