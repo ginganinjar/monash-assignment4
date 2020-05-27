@@ -37,7 +37,7 @@ var downloadTimer = setInterval(function(){
   if(timeleft <= 1){
     clearInterval(downloadTimer);
   }
-  document.getElementById("progressBar").value = ((60 - timeleft) / 60) * 10 ;
+  document.getElementById("progressBar").value = (60 - timeleft) ;
   timeleft -= 1;
   
   if ((ThegameIsOver === false) && (timeleft < 1)) {
