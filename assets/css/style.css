@@ -1,6 +1,11 @@
+body {
+
+  line-height: unset;
+}
+
 .gameFont {
-  font-family: 'Press Start 2P', cursive;
-  font-size: xx-large;
+  font-family:'Countdown'; font-weight: normal; font-style: normal;
+  font-size: xxx-large;
   color : azure;
   z-index : 99999;
 }
@@ -10,21 +15,22 @@
 
 
 .gameFontQuestionTitle {
-  font-family: 'Press Start 2P', cursive;
+  font-family:'Countdown'; font-weight: normal; font-style: normal;
   color :#94a294;
-  
+  font-size : xx-large;
   float: left;
   padding: 23px:;
   display: block;
   margin-right: 2px;
   margin-top: -33px;
   font-size: 60px;
+  padding : 1%;
 }
 
 .directionFont {
-  font-family: 'Press Start 2P', cursive;
+  font-family: auto;
   color: burlywood;
-  font-size: large;
+  font-size: xx-large;
   text-align: left;
   margin-bottom:unset;
   padding-top: 1%;
@@ -32,13 +38,20 @@
   border:unset;
 }
 
+.buttonsOver{
+
+  margin-left: 12%;
+}
+
 .feedbackFont {
 
 
-  font-family: 'Press Start 2P', cursive;
+  font-family:'Countdown'; font-weight: normal; font-style: normal;
     /* color: rgb(204, 45, 45); */
     font-size: xx-large;
 align:left;
+margin:0 auto;
+margin-left:12%;
 
 }
 
@@ -87,9 +100,15 @@ margin-top:1%;
 }
 }
 
+.FloatCenter {
+  margin: 0 auto;
+  width: 50%;
+}
+
+
 .leanLeft {
-margin-left : 0px;
-z-index: 999;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .backgroundImage {
@@ -114,7 +133,7 @@ z-index: 999;
 }
 
 .buttonPadding {
-  padding: 0%;
+  padding: 1%;
   margin-left: 1%;
 }
 =========================================== */
@@ -260,6 +279,11 @@ header a, a:visited {
 }
 /* // add the countdown font */
 @font-face {
-  font-family:"Countdown";
-  src: url("/assets/css/countdown.ttf") format("truetype");
+  font-family: 'Countdown';
+  src: url('../css/Countdown.woff2') format('woff2'),
+      url('../css/Countdown.woff') format('woff'),
+      url('../css/Countdown.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
+
