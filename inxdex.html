@@ -13,11 +13,15 @@
 </head>
 
 <body class="backgroundImage">
-  <div class="stars"></div>
+
+ <div class="stars"></div>
   <div class="twinkling"></div>
   <div class="clouds"></div>
 
   <div class="container fluid leanLeft">
+
+ 
+
 
     <div class="row">
       <div class="col-md-12">
@@ -28,7 +32,7 @@
 
     <div class="row">
    
-      <div class="col-md-12 offset-md-11    ">
+      <div class="col-md-12 ">
         <!-- the progress bar and coundown counter -->
         <div id="invisibletimer" style="visibility:hidden">
         <div id="counter" class="gameFont">60 Seconds Left</div>
@@ -39,7 +43,7 @@
     </div>
 
     <div class="row">
-      <div id="textstuff" class="col-sm-6 offset-md-5">
+      <div id="textstuff" class="col-sm-6 fixmargins">
      <div id="introBox">
         <p class="directionFont"> <b>Coding Quiz Challenge </b><br>
         Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
@@ -49,24 +53,21 @@
        <button type="button" class="btn btn-light buttonMove" id="startGameButton">Play Game</button>
       </div>
    
-
-       <div id="questions" class="hide">
-         <h2 id="questionNumber" class="gameFontQuestionTitle"></h2>
-        <h2 id="question-title" class="directionFont"></h2>
+          <h2 id="questionNumber" class="gameFontQuestionTitle"></h2>         
+        <h2 id="question-title" class="directionFont"></h2>    
         <div id="choices" class="directionFont choicespan"></div>
-     
-  
+       <div id="questions" class="hide">
+      <div id="feedback" class="feedbackFont" style="visibility:hidden;text-align:center;margin-left:30%;margin-top:2%;"></div>
         </div>
       </div>
 
     </div>
-<div class="row">
-  <div class="col-sm-12 offset-7">
-    <div id="feedback" class="feedbackFont" style="visibility:hidden;text-align:center;"></div>
 
-  </div>
+ 
+   
 
-</div>
+
+
 
 
 
