@@ -5,7 +5,26 @@ var QuestionIndex = 0;
 var questionsEl = document.getElementById("questions");
 var sfxRight = new Audio("assets/sfx/correct.wav");
 var sfxWrong = new Audio("assets/sfx/incorrect.wav");
+var gameOver = new Audio("assets/sfx/gameover.wav");
+var startSound = new Audio("assets/sfx/start.wav");
+
 var ResponseBox = document.getElementById("feedback");
+var playerScore = document.getElementById("score").innerHTML;
+var score = 0; 
+var ThegameIsOver = false;
+
+// javascript seems to prohibit sound effects unless they are manually executed by the user and need to be loaded in the buffer to fire correctly.
+// as such, this routine plays all sound effects at the same time to load them up so they trigger correctly when the game is in execution.
+
+function startTheDrums() {
+
+  sfxRight.play();
+  sfxWrong.play();
+  gameOver.play();
+  startSound.play();
+  gameOver.pause();
+
+}
 
 // countdown timer.
 function timer() {
@@ -20,6 +39,26 @@ var downloadTimer = setInterval(function(){
   }
   document.getElementById("progressBar").value = ((60 - timeleft) / 60) * 10 ;
   timeleft -= 1;
+  
+  if ((ThegameIsOver === false) && (timeleft < 1)) {
+    // the user has just failed - game over.
+    gameOver.play();
+    ThegameIsOver = true;
+    document.getElementById("GameContent").style = "visibility:hidden";
+    document.getElementById("introBox").style = "display:block";
+    document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
+    document.getElementById("FrontInfoBox").setAttribute("class", "gameFont");
+    document.getElementById("FrontInfoBox").style="font-size:83px;";
+    document.getElementById("startGameButton").style = "margin-left:0%;";
+    document.getElementById("feedback").style = "visibility:hidden;";
+    QuestionIndex = 0;
+
+}
+
+  // if our counter gets screwed below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
+  if (timeleft < 0) {
+    timeleft = 0;
+  }
   document.getElementById("counter").innerText = timeleft + "   seconds left";
 }, 1000);
 
@@ -63,14 +102,21 @@ function questionClickFunction() {
     // nope - not cool - got it wrong. 
 
     timeleft -= 15;
-    if (timeleft < 0) {
-      timeleft = 0;
-    }
+ 
 
       // too bad, so sad, you got it wrong. add the nasty shake.
      
       document.getElementById(this.id).classList.add('apply-shake');
+      document.getElementById("counter").classList.add('explode');
     
+    // because javascript is shit, any element class added and them removed will automatically overide the existing effect. subsequently,
+    // a timeout needs to be called to allow the initial effect to occur and then to provide enough time for the class to be removed
+    // for next time around.
+
+      setTimeout(function() {
+        document.getElementById("counter").classList.remove('explode');
+          },1000);
+
     // play you stuffed up sound effect
       sfxWrong.play();
       ResponseBox.setAttribute("style", "color:red");
@@ -78,9 +124,10 @@ function questionClickFunction() {
   } else {
     // play "right" sound effect
     sfxRight.play();
-    ResponseBox.setAttribute("style", "color:green");
+    ResponseBox.setAttribute("style", "color:#94a294");
     ResponseBox.textContent = "Correct!";
-  
+    score = score + 1;
+     document.getElementById("score").innerHTML = "Score : " + score;
   }
 
   // flash right/wrong feedback on page for half a second
@@ -94,7 +141,9 @@ function questionClickFunction() {
 
   // check if we've run out of questions
   if (QuestionIndex === questions.length) {
-    quizEnd();
+    // not good dave - we have run out of questions - and you said this would never happen...
+    timeleft = 0;
+
   } else {
     setTimeout(() => {rollQuestions();  }, 2000);
   
@@ -106,9 +155,17 @@ function questionClickFunction() {
 
 function startGame() {
 
+// set conditions
 
+ThegameIsOver = false;
+score = 0;
+timeleft = 60;
+
+document.getElementById("score").innerHTML = "Score : " + score;
+document.getElementById("GameContent").style = "visibility:visible";
+  startTheDrums();
   timer();
-  document.getElementById("introBox").style = "visibility:hidden;"
+  document.getElementById("introBox").style = "display:none;"
   rollQuestions();
 
 

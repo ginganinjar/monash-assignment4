@@ -19,6 +19,9 @@
 .directionFont {
   color: burlywood;
   font-size: x-large;
+  text-align: left;
+  margin-bottom:unset;
+  padding-top: 1%;
 }
 
 .feedbackFont {
@@ -27,13 +30,15 @@
     font-family: 'Countdown', arial;
     /* color: rgb(204, 45, 45); */
     font-size: xxx-large;
-    margin-top:2%;
+    margin-top:20%;
+  float:left;
 
 }
 
 
 .choicespan {
   width : 125%;
+  position: fixed;
  }
 
 .fixmargins {
@@ -42,7 +47,7 @@
 
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 780px) {
   
   .fixmargins {
     margin-left: 0%;
@@ -212,3 +217,13 @@ header a, a:visited {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
 
+.explode {
+  width:200vw;
+  animation-iteration-count: 1;
+  animation:letter_explode 1s 0s forwards;
+}
+@keyframes letter_explode {
+    0% {letter-spacing:0.1em;opacity:1;}
+    50% {letter-spacing:1em;opacity:0;}
+    100% {letter-spacing: 0.0em;opacity:1;}
+}
