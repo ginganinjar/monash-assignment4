@@ -238,3 +238,8 @@ header a, a:visited {
     50% {letter-spacing:1em;opacity:0;}
     100% {letter-spacing: 0.0em;opacity:1;}
 }
+/* // add the countdown font */
+@font-face {
+  font-family:"Countdown";
+  src: url("/assets/css/countdown.ttf") format("truetype");
+}
