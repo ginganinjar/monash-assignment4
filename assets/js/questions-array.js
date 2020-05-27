@@ -64,7 +64,13 @@ var questions = [
     choices: ["COMMIT the repo", "PUSH the repo", "CLONE the repo", "COMPARE the repo"],
     answer: "CLONE the repo"
     }
-
+    ,
+    {
+    title:
+    "Are CSS property names case-sensitive?",
+    choices: ["Yes", "No", "Depends on the browser", "Depends on CSS format"],
+    answer: "No"
+    }
 
   ];
   
