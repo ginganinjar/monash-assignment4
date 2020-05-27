@@ -155,7 +155,7 @@ function questionClickFunction() {
 
 function startGame() {
 
-// set conditions
+// set conditions for new game
 
 ThegameIsOver = false;
 score = 0;
