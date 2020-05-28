@@ -12,6 +12,7 @@ Live Demo : (https://ginganinjar.github.io/monash-assignment4/index.html)
 - Opera 30+ (maybe lower)
 - Edge 14+
 - Safari 9+ (awful browser it's like new IE)
+- Brave - all version - (I highly recommend Brave given it's compatibility with Chrome plugins) 
 
 
 By gamifying the process of a quiz, it is hoped that users enjoy learning with a repitive and constant challenge to beat the previous score. The beautiful background 9Nightsky with twinking stars) was taken from here, https://codepen.io/WebSonick/pen/vjmgu although significant custiomosation here would infer you'd be better to go to the source.
