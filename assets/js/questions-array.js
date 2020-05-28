@@ -71,6 +71,13 @@ var questions = [
     choices: ["Yes", "No", "Depends on the browser", "Depends on CSS format"],
     answer: "No"
     }
+    ,
+    {
+    title:
+    "'use strict'",
+    choices: ["enforces uppercase", "is a statement", "forces caps use", "has global scope"],
+    answer: "has global scope"
+    }
 
   ];
   
