@@ -84,8 +84,8 @@ function timer() {
 
       document.getElementById("introBox").style = "display:block";
       document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
-      document.getElementById("FrontInfoBox").setAttribute("class", "gameFont");
-      document.getElementById("FrontInfoBox").style = "font-size:53px;";
+      document.getElementById("FrontInfoBox").setAttribute("class", "gameFont extrafic");
+      document.getElementById("FrontInfoBox").style = "font-size:53px;margin-top:20px;margin:0 border;";
       document.getElementById("startGameButton").style = "margin-left:0%;";
       document.getElementById("feedback").style = "visibility:hidden;";
       QuestionIndex = 0;
