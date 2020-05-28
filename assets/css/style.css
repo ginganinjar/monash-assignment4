@@ -57,7 +57,7 @@ hr {
 }
 .savehighscoreInput {
  width:50px;
- maegin-bottom : 1%;
+ margin-bottom : 1%;
 }
 
 .gameFontQuestionTitle {
@@ -65,7 +65,7 @@ hr {
   color :#94a294;
   font-size : xx-large;
   float: left;
-  padding: 23px:;
+  padding: 23px;
   display: block;
   margin-right: 2px;
   margin-top: -33px;
@@ -79,7 +79,7 @@ hr {
   font-size: x-large;
   text-align: left;
   margin-bottom:unset;
-  padding-top: 1%;
+  padding-top: 0%;
   margin-top:0%;
   border:unset;
 }
@@ -95,7 +95,6 @@ hr {
   font-family:'Countdown'; font-weight: normal; font-style: normal;
     /* color: rgb(204, 45, 45); */
     font-size: xx-large;
-align:left;
 margin:0 auto;
 margin-left:12%;
 
@@ -105,7 +104,7 @@ margin-left:12%;
 .fixmargins {
  padding : 1%;
  /* margin-left:1%; */
-  margin-top: 12%;
+  margin-top: 0%;
 
 }
 
@@ -123,9 +122,16 @@ margin-left:12%;
     
     }
 
+    .FloatCenter {
+      margin: 0 auto;
+      width: 80%;
+    
+    }
+
 .buttonMove {
   cursor: pointer;
   margin-left: 51%;
+  margin-top : 2%;
 
 }   
 }
@@ -135,7 +141,7 @@ margin-left:12%;
   
   .fixmargins {
     margin-left: 0%;
-    margin-top: 12%;
+    margin-top: 0%;
   
   }
 
@@ -143,7 +149,7 @@ margin-left:12%;
 .buttonMove {
   cursor: pointer;
   margin-left: 1%;
-
+  margin-top : 1%;
 }
 
 .buttonPadding {
@@ -156,7 +162,7 @@ margin-left:12%;
     }
 
 .progressbar {
-woidth : 95%;
+width : 95%;
 
 }
 .highscores {
@@ -164,7 +170,11 @@ font-size : 25px;
 
 }
 
+.FloatCenter {
+  margin: 0 auto;
+  width: 100%;
 
+  }
 }
 
 .FloatCenter {
@@ -216,11 +226,7 @@ font-size : 25px;
   padding: 1%;
   margin-left: 1%;
 }
-=========================================== */
-* {
-    margin: 0;
-    padding: 0;
-}
+
 header {
     background-color:rgba(33, 33, 33, 0.9);
     color:#ffffff;
