@@ -325,7 +325,14 @@ header a, a:visited {
     font-family:'Countdown'; font-weight: normal; font-style: normal;
   }
 
-
+  .introtitle 
+  {
+    overflow: hidden;
+    color:#94a294;
+    height: fit-content;
+    font-size:100px;
+    font-family:'Countdown'; font-weight: normal; font-style: normal;
+  }
 
 @media only screen and (max-width: 1100px) {
   
@@ -373,6 +380,14 @@ header a, a:visited {
     font-family:'Countdown'; font-weight: normal; font-style: normal;
   }
 
+  .introtitle 
+  {
+    overflow: hidden;
+    color:#94a294;
+    height: fit-content;
+    font-size:60px;
+    font-family:'Countdown'; font-weight: normal; font-style: normal;
+  }
 
 }
 
@@ -385,7 +400,7 @@ header a, a:visited {
 
   .fixmargins {
     margin-left: 0%;
-    margin-top: 32%;
+    margin-top: 6%;
   }
 
 
@@ -435,6 +450,15 @@ font-size : 15px;
     color:#94a294;
     height: fit-content;
     font-size:69px;
+    font-family:'Countdown'; font-weight: normal; font-style: normal;
+  }
+
+  .introtitle 
+  {
+    overflow: hidden;
+    color:#94a294;
+    height: fit-content;
+    font-size:40px;
     font-family:'Countdown'; font-weight: normal; font-style: normal;
   }
 
