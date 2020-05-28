@@ -10,7 +10,7 @@ var startSound = new Audio("assets/sfx/start.wav");
 
 var ResponseBox = document.getElementById("feedback");
 var playerScore = document.getElementById("score").innerHTML;
-var score = 0; 
+var score = 0;
 var ThegameIsOver = false;
 
 // javascript seems to prohibit sound effects unless they are manually executed by the user and need to be loaded in the buffer to fire correctly.
@@ -29,62 +29,62 @@ function startTheDrums() {
 // countdown timer.
 function timer() {
 
-//timeleft counter starts at 60
+  //timeleft counter starts at 60
 
-document.getElementById("invisibletimer").style.visibility = "visible";
+  document.getElementById("invisibletimer").style.visibility = "visible";
 
-var downloadTimer = setInterval(function(){
-  if(timeleft <= 1){
-    clearInterval(downloadTimer);
-  }
-  document.getElementById("progressBar").value = (60 - timeleft) + 1 ;
-  timeleft -= 1;
-  
-  if ((ThegameIsOver === false) && (timeleft < 1)) {
-    // the user has just failed - game over.
-    gameOver.play();
-    ThegameIsOver = true;
-    document.getElementById("GameContent").style = "visibility:hidden";
+  var downloadTimer = setInterval(function () {
+    if (timeleft <= 1) {
+      clearInterval(downloadTimer);
+    }
+    document.getElementById("progressBar").value = (60 - timeleft) + 1;
+    timeleft -= 1;
 
-    
-    document.getElementById("introBox").style = "display:block";
-    document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
-    document.getElementById("FrontInfoBox").setAttribute("class", "gameFont");
-    document.getElementById("FrontInfoBox").style="font-size:53px;";
-    document.getElementById("startGameButton").style = "margin-left:0%;";
-    document.getElementById("feedback").style = "visibility:hidden;";
-    QuestionIndex = 0;
-    document.getElementById("savescore").style = "visibility:visible";
+    if ((ThegameIsOver === false) && (timeleft < 1)) {
+      // the user has just failed - game over.
+      gameOver.play();
+      ThegameIsOver = true;
+      document.getElementById("GameContent").style = "visibility:hidden";
+
+
+      document.getElementById("introBox").style = "display:block";
+      document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
+      document.getElementById("FrontInfoBox").setAttribute("class", "gameFont");
+      document.getElementById("FrontInfoBox").style = "font-size:53px;";
+      document.getElementById("startGameButton").style = "margin-left:0%;";
+      document.getElementById("feedback").style = "visibility:hidden;";
+      QuestionIndex = 0;
+      document.getElementById("savescore").style = "visibility:visible";
+
+    }
+
+    // if our counter gets screwed below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
+    if (timeleft < 0) {
+      timeleft = 0;
+    }
+    document.getElementById("counter").innerText = timeleft + "   seconds left";
+  }, 1000);
 
 }
 
-  // if our counter gets screwed below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
-  if (timeleft < 0) {
-    timeleft = 0;
-  }
-  document.getElementById("counter").innerText = timeleft + "   seconds left";
-}, 1000);
-
-}
 
 
-
-function rollQuestions () {
+function rollQuestions() {
   // get current question object from array
   var currentQuestion = questions[QuestionIndex];
   var ShowThisQuestion = QuestionIndex + 1;
-document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
+  document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
   document.getElementById("question-title").innerText = currentQuestion.title;
   var theChoices = document.getElementById("choices");
   theChoices.innerHTML = "";
 
   // loop over choices
-  currentQuestion.choices.forEach(function(choice, i) {
+  currentQuestion.choices.forEach(function (choice, i) {
     // appemd buttons using bootstrap design and move margin slightly left
     var choiceNode = document.createElement("button");
-    choiceNode.setAttribute("value", choice); 
+    choiceNode.setAttribute("value", choice);
     choiceNode.setAttribute("class", "btn btn-light buttonPadding");
-    choiceNode.setAttribute("id", "Btn" + i )
+    choiceNode.setAttribute("id", "Btn" + i)
 
     // add choice array data and text content
     choiceNode.textContent = i + 1 + ". " + choice;
@@ -99,8 +99,8 @@ document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
 
 function questionClickFunction() {
 
-    // ok you've had your fund. now disable to div so you can't have a second shot until the next go.
-    $('#choices').children().attr('disabled', 'disabled');
+  // ok you've had your fund. now disable to div so you can't have a second shot until the next go.
+  $('#choices').children().attr('disabled', 'disabled');
 
   // erm - is it OK?
   ResponseBox.setAttribute("style", "visibility:visible");
@@ -109,25 +109,25 @@ function questionClickFunction() {
     // nope - not cool - got it wrong. 
 
     timeleft -= 15;
- 
 
-      // too bad, so sad, you got it wrong. add the nasty shake.
-     
-      document.getElementById(this.id).classList.add('apply-shake');
-      document.getElementById("counter").classList.add('explode');
-    
+
+    // too bad, so sad, you got it wrong. add the nasty shake.
+
+    document.getElementById(this.id).classList.add('apply-shake');
+    document.getElementById("counter").classList.add('explode');
+
     // because javascript is shit, any element class added and them removed will automatically overide the existing effect. subsequently,
     // a timeout needs to be called to allow the initial effect to occur and then to provide enough time for the class to be removed
     // for next time around.
 
-      setTimeout(function() {
-        document.getElementById("counter").classList.remove('explode');
-          },1000);
+    setTimeout(function () {
+      document.getElementById("counter").classList.remove('explode');
+    }, 1000);
 
     // play you stuffed up sound effect
-      sfxWrong.play();
-      ResponseBox.setAttribute("style", "color:red");
-      ResponseBox.textContent = "Wrong!";
+    sfxWrong.play();
+    ResponseBox.setAttribute("style", "color:red");
+    ResponseBox.textContent = "Wrong!";
   } else {
     // play "right" sound effect
     sfxRight.play();
@@ -135,12 +135,12 @@ function questionClickFunction() {
     ResponseBox.textContent = "Correct!";
     // document.getElementById("marioImage").style = "visibility:visible";
     score = score + 1;
-     document.getElementById("score").innerHTML = "Score : " + score;
+    document.getElementById("score").innerHTML = "Score : " + score;
   }
 
   // flash right/wrong feedback on page for half a second
- 
-  setTimeout(function() {
+
+  setTimeout(function () {
     ResponseBox.setAttribute("style", "visibility:hidden");
   }, 2000);
 
@@ -153,15 +153,17 @@ function questionClickFunction() {
     timeleft = 0;
 
   } else {
-    setTimeout(() => {rollQuestions();  
+    setTimeout(() => {
+      rollQuestions();
       // because tre said that the timer does not pause during the questions process
       // i've just added two seconds to the clock. the delay is important because
       // the effects will not work without it. 
       // because javascript is a wierd language.
-      
-    timeleft = timeleft + 2;}, 2000);
-  
-    
+
+      timeleft = timeleft + 2;
+    }, 2000);
+
+
   }
 
 
@@ -169,14 +171,44 @@ function questionClickFunction() {
 
 function startGame() {
 
-// set conditions for new game
+  // check to see if the input field is ready.
+  var userinput = document.getElementById("initials").value;
 
-ThegameIsOver = false;
-score = 0;
-timeleft = 60;
+  // check if previous userinput has been saved.
 
-document.getElementById("score").innerHTML = "Score : " + score;
-document.getElementById("GameContent").style = "visibility:visible";
+  if (userinput) {
+
+    var getStorageInfo = localStorage["browsergame"];
+    // create multidemential array
+    let results = []; 
+   // push users info and score into array if input field is populated
+    results.push([userinput,score]);
+          
+      
+      if (getStorageInfo) {
+        // apparently javascript does not allow for arrays into localstorage. haha - thats so stupid.
+        // so anyway, it must be converted ..
+    
+             getStorageInfo =  JSON.parse(getStorageInfo);
+           console.log(getStorageInfo);  
+          results.push(getStorageInfo);
+          
+    
+      }
+
+    localStorage.setItem("browsergame", JSON.stringify(results));
+
+  } 
+ 
+
+  // set conditions for new game
+
+  ThegameIsOver = false;
+  score = 0;
+  timeleft = 60;
+
+  document.getElementById("score").innerHTML = "Score : " + score;
+  document.getElementById("GameContent").style = "visibility:visible";
   startTheDrums();
   timer();
   document.getElementById("introBox").style = "display:none;"
@@ -186,4 +218,4 @@ document.getElementById("GameContent").style = "visibility:visible";
 }
 
 
-startGameButton.addEventListener("click",startGame, false);
+startGameButton.addEventListener("click", startGame, false);
