@@ -110,6 +110,8 @@ margin-left:12%;
 
 .leanLeft {
   margin: 0 auto;
+  margin-left:2%; 
+  overflow : hidden;
   /* width: 50%; */
 }
 
