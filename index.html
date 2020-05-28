@@ -9,15 +9,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-
 </head>
 
-<body class="backgroundImage">
 
+<body class="backgroundImage">
   <div class="stars"></div>
   <div class="twinkling"></div>
   <div class="clouds"></div>
-
 
     <div class="row leanLeft">
       <div class="col-md-12">
@@ -29,10 +27,15 @@
     </div>
     </div>
         <!-- the progress bar and coundown counter -->
-      
+     
+        <div class="row fixedexplodingtext">
+          <div class="col-md-12">
+            <div id="invisibletimer" style="visibility:hidden"></div>
+          </div>
+        </div>
         <div class="row leanLeft">
           <div class="col-md-12">
-           <div id="invisibletimer" style="visibility:hidden">
+       
           <div id="counter" class="gameFont extrafic">60 Seconds Left</div>
           <progress value="0" max="60" id="progressBar" class="progressbar" style="width:30%;"></progress>
           <div id="score" class="gameFont extrafic">Score : 0</div>
@@ -48,7 +51,7 @@
         <div id="introBox">
        
          
-          <p class="directionFont" id="FrontInfoBox"> <b class="gameFont">Coding Quiz Challenge </b><br><br>
+          <p class="directionFont" id="FrontInfoBox"> <b class="gameoverflash">Coding Quiz Challenge </b><br><br>
             Answer the following code-related questions within the time limit. <br><br>
            You'll lose 10 seconds for every wrong answer. 
           </p>
@@ -58,6 +61,8 @@
           <p class="directionFont">
             High Score - Enter Initials : <input type="text" id="initials" class="savehighscoreInput"/>
           </p>
+       
+       
         </div>
    
           <button type="button" class="btn btn-light buttonMove" id="startGameButton">Play Game</button>

@@ -21,7 +21,7 @@
                 for (i=0;i < byScore.length; i++){
                 
                         // get the name and score of players but only do top 10 records
-                    if (i < 10) {
+                    if (i < 8) {
                     theName = byScore[i]["ui"];
                     theScore = byScore[i]["score"];
                     theDate = byScore[i]["dmy"];
@@ -39,7 +39,7 @@
                            
                             var myelement = document.createElement("div");
                              myelement.innerHTML = "No high scores ... yet";
-                             myelement.setAttribute("class", "highscores");
+                             myelement.setAttribute("class", "highscores gameoverdahdah");
                               var appendthis = document.getElementById("theList");
                               appendthis.appendChild(myelement);
 

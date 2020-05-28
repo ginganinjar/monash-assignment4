@@ -3,13 +3,23 @@ body {
   line-height: unset;
 }
 
+.fixedexplodingtext {
+position : fixed;
+max-width : 49%;
+
+}
+
+
 .gameFont {
   font-family:'Countdown'; font-weight: normal; font-style: normal;
   font-size: 60px;
-  color : azure;
+  color : red;
   z-index : 99999;
 }
 
+#invisibletimer {
+  position: fixed;
+}
 
 .highscores {
 
@@ -75,8 +85,8 @@ hr {
 
 .directionFont {
   font-family: auto;
-  color: burlywood;
-  font-size: x-large;
+  color: #fcfcfc;
+  font-size: xx-large;
   text-align: left;
   margin-bottom:unset;
   padding-top: 0%;
@@ -104,7 +114,6 @@ margin-left:12%;
 .fixmargins {
  padding : 1%;
  /* margin-left:1%; */
-  margin-top: 0%;
 
 }
 
@@ -307,12 +316,22 @@ header a, a:visited {
 }
 
 
+.gameoverflash 
+  {
+    overflow: hidden;
+    color:#94a294;
+    height: fit-content;
+    font-size:100px;
+    font-family:'Countdown'; font-weight: normal; font-style: normal;
+  }
+
+
+
 @media only screen and (max-width: 1100px) {
   
   .fixmargins {
     margin-left: 1%;
     margin-top: 12%;
-  
   }
 
   .highscores {
@@ -337,8 +356,22 @@ header a, a:visited {
 }
 
 .extrafic {
-  font-size : 45px;
+  overflow: hidden;
+  color:red;
+  height: fit-content;
+  font-size:45px;
+  font-family:'Countdown'; font-weight: normal; font-style: normal;
 }
+
+
+.gameoverflash 
+  {
+    overflow: hidden;
+    color:#94a294;
+    height: fit-content;
+    font-size:75px;
+    font-family:'Countdown'; font-weight: normal; font-style: normal;
+  }
 
 
 }
@@ -352,8 +385,7 @@ header a, a:visited {
 
   .fixmargins {
     margin-left: 0%;
-    margin-top: 0%;
-  
+    margin-top: 32%;
   }
 
 
@@ -388,8 +420,23 @@ font-size : 15px;
   width: 100%;
 
   }
+
   .extrafic {
-    font-size : 45px;
+  overflow: hidden;
+  color:red;
+  height: fit-content;
+  font-size:40px;
+  font-family:'Countdown'; font-weight: normal; font-style: normal;
+}
+
+.gameoverflash 
+  {
+    overflow: hidden;
+    color:#94a294;
+    height: fit-content;
+    font-size:69px;
+    font-family:'Countdown'; font-weight: normal; font-style: normal;
   }
+
 
 }
