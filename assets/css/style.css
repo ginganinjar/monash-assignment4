@@ -63,7 +63,7 @@ hr {
 .gameFontQuestionTitle {
   font-family:'Countdown'; font-weight: normal; font-style: normal;
   color :#94a294;
-  font-size : xx-large;
+  font-size : 45px;
   float: left;
   padding: 23px;
   display: block;
@@ -109,73 +109,6 @@ margin-left:12%;
 }
 
 
-@media only screen and (max-width: 1100px) {
-  
-  .fixmargins {
-    margin-left: 1%;
-    margin-top: 12%;
-  
-  }
-
-  .highscores {
-    font-size : 40px;
-    
-    }
-
-    .FloatCenter {
-      margin: 0 auto;
-      width: 80%;
-    
-    }
-
-.buttonMove {
-  cursor: pointer;
-  margin-left: 51%;
-  margin-top : 2%;
-
-}   
-}
-
-
-@media only screen and (max-width: 780px) {
-  
-  .fixmargins {
-    margin-left: 0%;
-    margin-top: 0%;
-  
-  }
-
-
-.buttonMove {
-  cursor: pointer;
-  margin-left: 1%;
-  margin-top : 1%;
-}
-
-.buttonPadding {
-  width: 80%;
-
-  }
-  .directionFont {
-    margin-top : 10%;
-  
-    }
-
-.progressbar {
-width : 95%;
-
-}
-.highscores {
-font-size : 25px;
-
-}
-
-.FloatCenter {
-  margin: 0 auto;
-  width: 100%;
-
-  }
-}
 
 .FloatCenter {
   margin: 0 auto;
@@ -373,3 +306,90 @@ header a, a:visited {
   font-style: normal;
 }
 
+
+@media only screen and (max-width: 1100px) {
+  
+  .fixmargins {
+    margin-left: 1%;
+    margin-top: 12%;
+  
+  }
+
+  .highscores {
+    font-size : 40px;
+    }
+
+    .FloatCenter {
+      margin: 0 auto;
+      width: 80%;
+    
+    }
+
+.buttonMove {
+  cursor: pointer;
+  margin-left: 51%;
+  margin-top : 2%;
+
+}   
+
+.gamefont {
+  font-size : 45px;
+}
+
+.extrafic {
+  font-size : 45px;
+}
+
+
+}
+
+
+@media only screen and (max-width: 780px) {
+  
+.gamefont {
+  font-size : 25px;
+}
+
+  .fixmargins {
+    margin-left: 0%;
+    margin-top: 0%;
+  
+  }
+
+
+.buttonMove {
+  cursor: pointer;
+  /* margin-left: 1%;
+  margin-top : 1%; */
+  margin : 0 border;  
+  margin-left: 32%;
+}
+
+.buttonPadding {
+  width: 80%;
+
+  }
+  .directionFont {
+    margin-top : 10%;
+  
+    }
+
+.progressbar {
+width : 95%;
+
+}
+.highscores {
+font-size : 15px;
+
+}
+
+.FloatCenter {
+  margin: 0 auto;
+  width: 100%;
+
+  }
+  .extrafic {
+    font-size : 45px;
+  }
+
+}
