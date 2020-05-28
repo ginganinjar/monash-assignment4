@@ -418,7 +418,7 @@ header a, a:visited {
   }
   .directionFont {
     margin-top : 10%;
-  
+    font-size : 24px;
     }
 
 .progressbar {

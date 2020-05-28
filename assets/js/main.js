@@ -95,7 +95,7 @@ function timer() {
     if (timeleft < 0) {
       timeleft = 0;
     }
-    document.getElementById("counter").innerText = timeleft + "   seconds left";
+    document.getElementById("counter").innerText = timeleft + " seconds";
   }, 1000);
 
 }
