@@ -20,8 +20,8 @@
            
                 for (i=0;i < byScore.length; i++){
                 
-                        // get the name and score of players
-
+                        // get the name and score of players but only do top 10 records
+                    if (i < 10) {
                     theName = byScore[i]["ui"];
                     theScore = byScore[i]["score"];
                     theDate = byScore[i]["dmy"];
@@ -30,7 +30,7 @@
                     var appendthis = document.getElementById("theList");
                     appendthis.appendChild(myelement);
 
-
+                    }
                 }
             } else
                     {

@@ -135,7 +135,7 @@ function rollQuestions() {
 
 function questionClickFunction() {
 
-  // ok you've had your fund. now disable to div so you can't have a second shot until the next go.
+  // ok you've had your fun. now disable to div so you can't have a second shot until the next go.
   $('#choices').children().attr('disabled', 'disabled');
 
   // erm - is it OK?
@@ -237,17 +237,9 @@ today = dd + '/' + mm + '/' + yyyy;
   // search for previous result
   const old = results.find((r) => r.ui === userinput);
 
-  // if old record exists then replace score it it
-  if (old) {
-      // this is the most tricky part
-      // old is not a copy of object from results array but 
-      // reference, therefore if you change score in old then print 
-      // results array you will see that array will have that change
-      old.score = score;
-  } else {
       // otherwise push in the array new results
       results.push({ ui: userinput, score: score, dmy : today });    
-  }
+  
 
   // replace by new results
   localStorage["browsergame"] = JSON.stringify(results);
