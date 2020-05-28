@@ -158,15 +158,11 @@ function questionClickFunction() {
       // because tre said that the timer does not pause during the questions process
       // i've just added two seconds to the clock. the delay is important because
       // the effects will not work without it. 
-      // because javascript is a wierd language.
+      // because javascript is not procedural - like that's a good thing.
 
       timeleft = timeleft + 2;
     }, 2000);
-
-
   }
-
-
 }
 
 function startGame() {
@@ -174,32 +170,49 @@ function startGame() {
   // check to see if the input field is ready.
   var userinput = document.getElementById("initials").value;
 
-  // check if previous userinput has been saved.
+  // check if user has populated the input field
 
-  if (userinput) {
+   
+if (userinput) {
 
-    var getStorageInfo = localStorage["browsergame"];
-    // create multidemential array
-    let results = []; 
-   // push users info and score into array if input field is populated
-    results.push([userinput,score]);
-          
-      
-      if (getStorageInfo) {
-        // apparently javascript does not allow for arrays into localstorage. haha - thats so stupid.
-        // so anyway, it must be converted ..
-    
-             getStorageInfo =  JSON.parse(getStorageInfo);
-           console.log(getStorageInfo);  
-          results.push(getStorageInfo);
-          
-    
-      }
+// change the play button startGameButton to something else
+document.getElementById("startGameButton").innerHTML = "Try Again";
 
-    localStorage.setItem("browsergame", JSON.stringify(results));
 
-  } 
+// get the date of smashing record
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = dd + '/' + mm + '/' + yyyy;
+
+
+  // get what we have in storage
+  var getStorageInfo = localStorage["browsergame"];
  
+  // if getStorageInfo is not empty then parse json otherwise set as empty array
+  var results = getStorageInfo ? JSON.parse(getStorageInfo) : [];
+
+  // search for previous result
+  const old = results.find((r) => r.ui === userinput);
+
+  // if old record exists then replace score it it
+  if (old) {
+      // this is the most tricky part
+      // old is not a copy of object from results array but 
+      // reference, therefore if you change score in old then print 
+      // results array you will see that array will have that change
+      old.score = score;
+  } else {
+      // otherwise push in the array new results
+      results.push({ ui: userinput, score: score, dmy : today });    
+  }
+
+  // replace by new results
+  localStorage["browsergame"] = JSON.stringify(results);
+}
+
 
   // set conditions for new game
 
