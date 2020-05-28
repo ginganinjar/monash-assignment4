@@ -78,6 +78,19 @@ var questions = [
     choices: ["enforces uppercase", "is a statement", "forces caps use", "has global scope"],
     answer: "has global scope"
     }
-
+    ,
+    {
+    title:
+    "'Javascript types are dynamic'",
+    choices: ["true", "false"],
+    answer: "true"
+    }
+    ,
+    {
+    title:
+    "Which of the following does not define an immutable value?",
+    choices: ["Boolean Type", "Null Type", "Number Type", "Object Type", "Undefined Type"],
+    answer: "Object Type"
+    }
   ];
   

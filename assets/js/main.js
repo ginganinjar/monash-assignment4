@@ -26,6 +26,39 @@ function startTheDrums() {
 
 }
 
+function playsound(soundfile) {
+
+  if(document.getElementById('soundvar').checked)    {
+    //  Nothing to hear here.
+    
+    return;
+  } else {
+    soundfile.play();
+  }
+}
+
+
+function soundSwitch() {
+  if(document.getElementById('soundvar').checked) 
+{ 
+// sound off
+
+    document.getElementById("speakerimg").setAttribute("src","assets/images/soundon.png");
+    document.getElementById("soundvar").checked = false;
+  
+
+} else {
+ // sound on
+
+       document.getElementById("speakerimg").setAttribute("src","assets/images/soundoff.png");
+      document.getElementById("soundvar").checked = true;
+   
+ 
+
+    }
+}
+
+
 // countdown timer.
 function timer() {
 
@@ -42,7 +75,9 @@ function timer() {
 
     if ((ThegameIsOver === false) && (timeleft < 1)) {
       // the user has just failed - game over.
-      gameOver.play();
+     // gameOver.play();
+      playsound(gameOver);
+
       ThegameIsOver = true;
       document.getElementById("GameContent").style = "visibility:hidden";
 
@@ -84,6 +119,7 @@ function rollQuestions() {
     var choiceNode = document.createElement("button");
     choiceNode.setAttribute("value", choice);
     choiceNode.setAttribute("class", "btn btn-light buttonPadding");
+    choiceNode.setAttribute("style","margin:1%;")
     choiceNode.setAttribute("id", "Btn" + i)
 
     // add choice array data and text content
@@ -125,12 +161,16 @@ function questionClickFunction() {
     }, 1000);
 
     // play you stuffed up sound effect
-    sfxWrong.play();
+    //sfxWrong.play();
+    playsound(sfxWrong);
+
     ResponseBox.setAttribute("style", "color:red");
     ResponseBox.textContent = "Wrong!";
   } else {
     // play "right" sound effect
-    sfxRight.play();
+    //sfxRight.play();
+    playsound(sfxRight);
+
     ResponseBox.setAttribute("style", "color:#94a294");
     ResponseBox.textContent = "Correct!";
     // document.getElementById("marioImage").style = "visibility:visible";
@@ -231,4 +271,8 @@ today = dd + '/' + mm + '/' + yyyy;
 }
 
 
+
+
+
 startGameButton.addEventListener("click", startGame, false);
+speakerimg.addEventListener("click", soundSwitch, false);

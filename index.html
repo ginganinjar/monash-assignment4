@@ -24,9 +24,11 @@
     <div class="row leanLeft">
       <div class="col-md-12">
         <a href="hscores.html" class="gameFont nice">High Scores</a>
+        <div id="sound" class="soundicon leanright" value="true">
+          <img src="assets/images/soundon.png" id="speakerimg" width="50" height="50"> 
+          <input type="checkbox" id="soundvar" style="visibility:hidden"/>
       </div>
     </div>
-
 
         <!-- the progress bar and coundown counter -->
       
@@ -34,11 +36,13 @@
           <div class="col-md-12">
            <div id="invisibletimer" style="visibility:hidden">
           <div id="counter" class="gameFont">60 Seconds Left</div>
-          <progress value="0" max="60" id="progressBar" style="width:30%;"></progress>
+          <progress value="0" max="60" id="progressBar" class="progressbar" style="width:30%;"></progress>
           <div id="score" class="gameFont">Score : 0</div>
         </div>
       </div>
       </div>
+
+<!-- text stuff content used for questioms and notification -->
 
      <div class="container fluid leanleft"> 
     <div class="row FloatCenter">
@@ -55,12 +59,11 @@
           <div id="savescore" class="hiddencontent">  
           <p class="directionFont">
             High Score - Enter Initials : <input type="text" id="initials" class="savehighscoreInput" max="3" />
-            <!-- <button id="submit">Submit</button> -->
             
           </p>
         </div>
    
-          <button type="button" class="btn btn-light buttonMove " id="startGameButton">Play Game</button>
+          <button type="button" class="btn btn-light buttonMove" id="startGameButton">Play Game</button>
        
         </div>
 

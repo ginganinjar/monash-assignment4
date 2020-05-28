@@ -35,6 +35,10 @@ body {
   z-index : 99999;
   
 }
+.soundicon {
+z-index:99999;
+
+}
 
 hr {
 
@@ -105,6 +109,28 @@ margin-left:12%;
 
 }
 
+
+@media only screen and (max-width: 1100px) {
+  
+  .fixmargins {
+    margin-left: 1%;
+    margin-top: 12%;
+  
+  }
+
+  .highscores {
+    font-size : 40px;
+    
+    }
+
+.buttonMove {
+  cursor: pointer;
+  margin-left: 51%;
+
+}   
+}
+
+
 @media only screen and (max-width: 780px) {
   
   .fixmargins {
@@ -119,27 +145,31 @@ margin-left:12%;
   margin-left: 1%;
 
 }
-}
 
-@media only screen and (max-width: 1100px) {
-  
-  .fixmargins {
-    margin-left: 1%;
-    margin-top: 12%;
-  
+.buttonPadding {
+  width: 80%;
+
   }
+  .directionFont {
+    margin-top : 10%;
+  
+    }
 
-
-.buttonMove {
-  cursor: pointer;
-  margin-left: 51%;
+.progressbar {
+woidth : 95%;
 
 }
+.highscores {
+font-size : 25px;
+
+}
+
+
 }
 
 .FloatCenter {
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
 }
 
 
@@ -148,6 +178,15 @@ margin-left:12%;
   margin-left:2%; 
   overflow : hidden;
   /* width: 50%; */
+}
+
+.leanright {
+  margin: 0 auto;
+  margin-right:2%; 
+  overflow : hidden;
+  float:right;
+  margin-top : 1%;
+  cursor: pointer;
 }
 
 .backgroundImage {
