@@ -23,7 +23,7 @@ Use git to clone the project using the repository : git@github.com:ginganinjar/m
 git clone git@github.com:ginganinjar/monash-assignment4.git
 
 Usage
-The application game can be customised by adding questions into the file questions-arry.js. Sound can be turned off/on by using the speaker icon and the leaderboard saves the score on the localstorage of the users machine. 
+The application game can be customised by adding questions into the file questions-array.js. Sound can be turned off/on by using the speaker icon and the leaderboard saves the score on the localstorage of the users machine. 
 
 Acceptance Criteria
 GIVEN I am taking a code quiz
