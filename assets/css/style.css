@@ -12,7 +12,7 @@ body {
     font-weight: normal;
     font-style: normal;
     font-size: 60px;
-    color: red;
+    color: #ff0000;
     z-index: 99999;
 }
 
@@ -408,7 +408,7 @@ a:visited {
     }
     .extrafic {
         overflow: hidden;
-        color: red;
+        color: #ff0000;
         height: fit-content;
         font-size: 45px;
         font-family: 'Countdown';
@@ -472,7 +472,7 @@ a:visited {
     }
     .extrafic {
         overflow: hidden;
-        color: red;
+        color: #ff0000;
         height: fit-content;
         font-size: 35px;
         font-family: 'Countdown';
