@@ -80,8 +80,6 @@ function timer() {
 
       ThegameIsOver = true;
       document.getElementById("GameContent").style = "visibility:hidden";
-
-
       document.getElementById("introBox").style = "display:block";
       document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
       document.getElementById("FrontInfoBox").setAttribute("class", "gameoverflash");
@@ -91,7 +89,7 @@ function timer() {
       document.getElementById("savescore").style = "visibility:visible";
     }
 
-    // if our counter gets screwed below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
+    // if our counter gets  below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
     if (timeleft < 0) {
       timeleft = 0;
     }
