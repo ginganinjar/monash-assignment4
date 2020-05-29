@@ -396,7 +396,7 @@ header a, a:visited {
 @media only screen and (max-width: 780px) {
   
   .highscoreURL {
-  font-size : 30px;
+  font-size : 45px;
   }
 .gamefont {
   font-size : 25px;
@@ -444,7 +444,7 @@ font-size : 15px;
   overflow: hidden;
   color:red;
   height: fit-content;
-  font-size:40px;
+  font-size:35px;
   font-family:'Countdown'; font-weight: normal; font-style: normal;
 }
 
