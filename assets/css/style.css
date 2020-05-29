@@ -1,478 +1,509 @@
 body {
-
-  line-height: unset;
+    line-height: unset;
 }
 
 .fixedexplodingtext {
-position : fixed;
-max-width : 49%;
-
+    position: fixed;
+    max-width: 49%;
 }
 
-
-
 .gameFont {
-  font-family:'Countdown'; font-weight: normal; font-style: normal;
-  font-size: 60px;
-  color : red;
-  z-index : 99999;
+    font-family: 'Countdown';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 60px;
+    color: red;
+    z-index: 99999;
 }
 
 #invisibletimer {
-  position: fixed;
+    position: fixed;
+    Í
 }
 
 .highscores {
-
-  font-family:'Countdown'; font-weight: normal; font-style: normal;
-  font-size: 55px;
-  color : azure;
-  z-index : 99999;
-  margin:0 auto;
-  text-align:center;
-
+    font-family: 'Countdown';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 55px;
+    color: azure;
+    z-index: 99999;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .nice {
-  color : #fcfcfc;
-  text-decoration: underline;
+    color: #fcfcfc;
+    text-decoration: underline;
 }
-
 
 .gameFontHighScore {
-  font-family:'Countdown'; font-weight: normal; font-style: normal;
-  font-size: 86px;
-  color : azure;
-  z-index : 99999;
-  
+    font-family: 'Countdown';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 103px;
+    color: azure;
+    z-index: 99999;
 }
-.soundicon {
-z-index:99999;
 
+.soundicon {
+    z-index: 99999;
 }
 
 hr {
-
-  color : azure;
-  z-index : 99999;
-  border:solid;
-
+    color: azure;
+    z-index: 99999;
+    border: solid;
 }
 
 .mainconent {
-  padding : 5%
+    padding: 5%
 }
 
 .hiddencontent {
-  visibility: hidden;
+    visibility: hidden;
 }
+
 .savehighscoreInput {
- width:50px;
- margin-bottom : 1%;
+    width: 50px;
+    margin-bottom: 1%;
 }
 
 .gameFontQuestionTitle {
-  font-family:'Countdown'; font-weight: normal; font-style: normal;
-  color :#94a294;
-  font-size : 45px;
-  float: left;
-  padding: 23px;
-  display: block;
-  margin-right: 2px;
-  margin-top: -33px;
-  font-size: 60px;
-  padding : 1%;
+    font-family: 'Countdown';
+    font-weight: normal;
+    font-style: normal;
+    color: #94a294;
+    font-size: 45px;
+    float: left;
+    padding: 23px;
+    display: block;
+    margin-right: 2px;
+    margin-top: -33px;
+    font-size: 60px;
+    padding: 1%;
 }
 
 .directionFont {
-  font-family: auto;
-  color: #fcfcfc;
-  font-size: xx-large;
-  text-align: left;
-  margin-bottom:unset;
-  padding-top: 0%;
-  margin-top:0%;
-  border:unset;
+    font-family: auto;
+    color: #fcfcfc;
+    font-size: xx-large;
+    text-align: left;
+    margin-bottom: unset;
+    padding-top: 0%;
+    margin-top: 0%;
+    border: unset;
 }
 
-.buttonsOver{
-
-  margin-left: 12%;
+.buttonsOver {
+    margin-left: 12%;
 }
 
 .feedbackFont {
-
-
-  font-family:'Countdown'; font-weight: normal; font-style: normal;
+    font-family: 'Countdown';
+    font-weight: normal;
+    font-style: normal;
     /* color: rgb(204, 45, 45); */
     font-size: xx-large;
-margin:0 auto;
-margin-left:12%;
-
+    margin: 0 auto;
+    margin-left: 12%;
 }
-
 
 .fixmargins {
- padding : 1%;
- /* margin-left:1%; */
-
+    padding: 1%;
+    /* margin-left:1%; */
 }
-
-
 
 .FloatCenter {
-  margin: 0 auto;
-  width: 60%;
+    margin: 0 auto;
+    width: 60%;
 }
 
-
 .leanLeft {
-  margin: 0 auto;
-  margin-left:2%; 
-  overflow : hidden;
-  /* width: 50%; */
+    margin: 0 auto;
+    margin-left: 2%;
+    overflow: hidden;
+    /* width: 50%; */
 }
 
 .leanright {
-  margin: 0 auto;
-  margin-right:2%; 
-  overflow : hidden;
-  float:right;
-  margin-top : 1%;
-  cursor: pointer;
+    margin: 0 auto;
+    margin-right: 2%;
+    overflow: hidden;
+    float: right;
+    margin-top: 1%;
+    cursor: pointer;
 }
 
 .backgroundImage {
-  background-image:url("/assets/images/stars_background.png"); 
- 
- /* Full height */
- /* height: 100%; */
- /* Center and scale the image nicely */
- /* background-position: center; */
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* min-height : 100vh; */
-  height : 100vh;
-
+    background-image: url("/assets/images/stars_background.png");
+    /* Full height */
+    /* height: 100%; */
+    /* Center and scale the image nicely */
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* min-height : 100vh; */
+    height: 100vh;
 }
-
 
 .buttonMove {
-  cursor: pointer;
-  margin-left: 71%;
-
+    cursor: pointer;
+    margin-left: 71%;
 }
+
 
 /* inseerted in javascript routine */
 
 .buttonPadding {
-  padding: 2%;
-  margin-left: 1%;
+    padding: 2%;
+    margin-left: 1%;
 }
 
 header {
-    background-color:rgba(33, 33, 33, 0.9);
-    color:#ffffff;
-    display:block;
-    font: 14px/1.3 Arial,sans-serif;
-    height:50px;
-    position:relative;
-    z-index:5;
+    background-color: rgba(33, 33, 33, 0.9);
+    color: #ffffff;
+    display: block;
+    font: 14px/1.3 Arial, sans-serif;
+    height: 50px;
+    position: relative;
+    z-index: 5;
 }
-h2{
+
+h2 {
     margin-top: 30px;
     text-align: center;
 }
-header h2{
+
+header h2 {
     font-size: 22px;
     margin: 0 auto;
     padding: 10px 0;
     width: 80%;
     text-align: center;
 }
-header a, a:visited {
-    text-decoration:none;
-    color:#fcfcfc;
+
+header a,
+a:visited {
+    text-decoration: none;
+    color: #fcfcfc;
 }
+
 
 /* Nightsky with twinking stars - stolen from : https://codepen.io/WebSonick/pen/vjmgu */
 
 @keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
 }
+
 @-webkit-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
 }
+
 @-moz-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
 }
+
 @-ms-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
 }
 
 @keyframes move-clouds-back {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
-}
-@-webkit-keyframes move-clouds-back {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
-}
-@-moz-keyframes move-clouds-back {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
-}
-@-ms-keyframes move-clouds-back {
-    from {background-position: 0;}
-    to {background-position:10000px 0;}
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
 }
 
-.stars, .twinkling, .clouds {
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  width:100%;
-  height:100%;
-  display:block;
+@-webkit-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-moz-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-ms-keyframes move-clouds-back {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.stars,
+.twinkling,
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .stars {
-  background:#000 url(../images/stars.png ) repeat top center;
-  z-index:0;
+    background: #000 url(../images/stars.png ) repeat top center;
+    z-index: 0;
 }
 
-.twinkling{
-  background:transparent url(../images/twinkling.png) repeat top center;
-  /* z-index:1; */
-
-  -moz-animation:move-twink-back 200s linear infinite;
-  -ms-animation:move-twink-back 200s linear infinite;
-  -o-animation:move-twink-back 200s linear infinite;
-  -webkit-animation:move-twink-back 200s linear infinite;
-  animation:move-twink-back 200s linear infinite;
+.twinkling {
+    background: transparent url(../images/twinkling.png) repeat top center;
+    /* z-index:1; */
+    -moz-animation: move-twink-back 200s linear infinite;
+    -ms-animation: move-twink-back 200s linear infinite;
+    -o-animation: move-twink-back 200s linear infinite;
+    -webkit-animation: move-twink-back 200s linear infinite;
+    animation: move-twink-back 200s linear infinite;
 }
 
-.clouds{
-    background:transparent url(../images/clouds3.png) repeat top center;
+.clouds {
+    background: transparent url(../images/clouds3.png) repeat top center;
     /* z-index:3; */
-
-  -moz-animation:move-clouds-back 200s linear infinite;
-  -ms-animation:move-clouds-back 200s linear infinite;
-  -o-animation:move-clouds-back 200s linear infinite;
-  -webkit-animation:move-clouds-back 200s linear infinite;
-  animation:move-clouds-back 200s linear infinite;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
 }
+
 
 /* end of theft */
 
+
 /* shake screen effect - i wrote this one */
 
+
 /* Standard syntax */
+
 @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
 
 .apply-shake {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
 }
 
 .explode {
-  width:200vw;
-  animation-iteration-count: 1;
-  animation:letter_explode 1s 0s forwards;
+    width: 200vw;
+    animation-iteration-count: 1;
+    animation: letter_explode 1s 0s forwards;
 }
+
 @keyframes letter_explode {
-    0% {letter-spacing:0.1em;opacity:1;}
-    50% {letter-spacing:1em;opacity:0;}
-    100% {letter-spacing: 0.0em;opacity:1;}
+    0% {
+        letter-spacing: 0.1em;
+        opacity: 1;
+    }
+    50% {
+        letter-spacing: 1em;
+        opacity: 0;
+    }
+    100% {
+        letter-spacing: 0.0em;
+        opacity: 1;
+    }
 }
+
+
 /* // add the countdown font */
+
 @font-face {
-  font-family: 'Countdown';
-  src: url('../css/Countdown.woff2') format('woff2'),
-      url('../css/Countdown.woff') format('woff'),
-      url('../css/Countdown.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Countdown';
+    src: url('../css/Countdown.woff2') format('woff2'), url('../css/Countdown.woff') format('woff'), url('../css/Countdown.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-
-.gameoverflash 
-  {
+.gameoverflash {
     overflow: hidden;
-    color:#94a294;
+    color: #94a294;
     height: fit-content;
-    font-size:100px;
-    font-family:'Countdown'; font-weight: normal; font-style: normal;
-  }
+    font-size: 100px;
+    font-family: 'Countdown';
+    font-weight: normal;
+    font-style: normal;
+}
 
-  .introtitle 
-  {
+.introtitle {
     overflow: hidden;
-    color:#94a294;
+    color: #94a294;
     height: fit-content;
-    font-size:100px;
-    font-family:'Countdown'; font-weight: normal; font-style: normal;
-  }
+    font-size: 100px;
+    font-family: 'Countdown';
+    font-weight: normal;
+    font-style: normal;
+}
 
 @media only screen and (max-width: 1100px) {
-  
-  .fixmargins {
-    margin-left: 1%;
-    margin-top: 12%;
-  }
-
-  .highscores {
-    font-size : 40px;
+    .fixmargins {
+        margin-left: 1%;
+        margin-top: 12%;
     }
-
+    .highscores {
+        font-size: 40px;
+    }
     .FloatCenter {
-      margin: 0 auto;
-      width: 80%;
-    
+        margin: 0 auto;
+        width: 80%;
     }
-
-.buttonMove {
-  cursor: pointer;
-  margin-left: 51%;
-  margin-top : 2%;
-
-}   
-
-.gamefont {
-  font-size : 45px;
+    .buttonMove {
+        cursor: pointer;
+        margin-left: 51%;
+        margin-top: 2%;
+    }
+    .gamefont {
+        font-size: 45px;
+    }
+    .extrafic {
+        overflow: hidden;
+        color: red;
+        height: fit-content;
+        font-size: 45px;
+        font-family: 'Countdown';
+        font-weight: normal;
+        font-style: normal;
+    }
+    .gameoverflash {
+        overflow: hidden;
+        color: #94a294;
+        height: fit-content;
+        font-size: 75px;
+        font-family: 'Countdown';
+        font-weight: normal;
+        font-style: normal;
+    }
+    .introtitle {
+        overflow: hidden;
+        color: #94a294;
+        height: fit-content;
+        font-size: 60px;
+        font-family: 'Countdown';
+        font-weight: normal;
+        font-style: normal;
+    }
 }
-
-.extrafic {
-  overflow: hidden;
-  color:red;
-  height: fit-content;
-  font-size:45px;
-  font-family:'Countdown'; font-weight: normal; font-style: normal;
-}
-
-
-.gameoverflash 
-  {
-    overflow: hidden;
-    color:#94a294;
-    height: fit-content;
-    font-size:75px;
-    font-family:'Countdown'; font-weight: normal; font-style: normal;
-  }
-
-  .introtitle 
-  {
-    overflow: hidden;
-    color:#94a294;
-    height: fit-content;
-    font-size:60px;
-    font-family:'Countdown'; font-weight: normal; font-style: normal;
-  }
-
-}
-
 
 @media only screen and (max-width: 780px) {
-  
-  .highscoreURL {
-  font-size : 45px;
-  }
-.gamefont {
-  font-size : 25px;
-}
-
-  .fixmargins {
-    margin-left: 0%;
-    margin-top: 6%;
-  }
-
-
-.buttonMove {
-  cursor: pointer;
-  /* margin-left: 1%;
-  margin-top : 1%; */
-  margin : 0 border;  
-  margin-left: 32%;
-}
-
-.buttonPadding {
-  width: 80%;
-
-  }
-  .directionFont {
-    margin-top : 10%;
-    font-size : 24px;
+    .highscoreURL {
+        font-size: 45px;
     }
-
-.progressbar {
-width : 95%;
-
-}
-.highscores {
-font-size : 15px;
-
-}
-
-.FloatCenter {
-  margin: 0 auto;
-  width: 100%;
-
-  }
-
-  .extrafic {
-  overflow: hidden;
-  color:red;
-  height: fit-content;
-  font-size:35px;
-  font-family:'Countdown'; font-weight: normal; font-style: normal;
-}
-
-.gameoverflash 
-  {
-    overflow: hidden;
-    color:#94a294;
-    height: fit-content;
-    font-size: 50px;
-    font-family:'Countdown'; font-weight: normal; font-style: normal;
-  }
-
-  .gameFontHighScore
-  {
-    overflow: hidden;
-    color:#94a294;
-    height: fit-content;
-    font-size: 50px;
-    font-family:'Countdown'; font-weight: normal; font-style: normal;
-  }
-  .introtitle 
-  {
-    overflow: hidden;
-    color:#94a294;
-    height: fit-content;
-    font-size: 32px;
-    font-family:'Countdown'; font-weight: normal; font-style: normal;
-  }
-
-
+    .gamefont {
+        font-size: 25px;
+    }
+    .fixmargins {
+        margin-left: 0%;
+        margin-top: 6%;
+    }
+    .buttonMove {
+        cursor: pointer;
+        /* margin-left: 1%;
+  margin-top : 1%; */
+        margin: 0 border;
+        margin-left: 32%;
+    }
+    .buttonPadding {
+        width: 80%;
+    }
+    .directionFont {
+        margin-top: 10%;
+        font-size: 24px;
+    }
+    .progressbar {
+        width: 95%;
+    }
+    .highscores {
+        font-size: 15px;
+    }
+    .FloatCenter {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .extrafic {
+        overflow: hidden;
+        color: red;
+        height: fit-content;
+        font-size: 35px;
+        font-family: 'Countdown';
+        font-weight: normal;
+        font-style: normal;
+    }
+    .gameoverflash {
+        overflow: hidden;
+        color: #94a294;
+        height: fit-content;
+        font-size: 50px;
+        font-family: 'Countdown';
+        font-weight: normal;
+        font-style: normal;
+    }
+    .gameFontHighScore {
+        overflow: hidden;
+        color: #94a294;
+        height: fit-content;
+        font-size: 50px;
+        font-family: 'Countdown';
+        font-weight: normal;
+        font-style: normal;
+    }
+    .introtitle {
+        overflow: hidden;
+        color: #94a294;
+        height: fit-content;
+        font-size: 32px;
+        font-family: 'Countdown';
+        font-weight: normal;
+        font-style: normal;
+    }
 }
