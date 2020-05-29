@@ -10,6 +10,7 @@ max-width : 49%;
 }
 
 
+
 .gameFont {
   font-family:'Countdown'; font-weight: normal; font-style: normal;
   font-size: 60px;
@@ -394,6 +395,9 @@ header a, a:visited {
 
 @media only screen and (max-width: 780px) {
   
+  .highscoreURL {
+  font-size : 30px;
+  }
 .gamefont {
   font-size : 25px;
 }
