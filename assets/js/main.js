@@ -18,42 +18,41 @@ var ThegameIsOver = false;
 
 function startTheDrums() {
 
-  sfxRight.play();
-  sfxWrong.play();
-  gameOver.play();
-  startSound.play();
-  gameOver.pause();
+    sfxRight.play();
+    sfxWrong.play();
+    gameOver.play();
+    startSound.play();
+    gameOver.pause();
 
 }
 
 function playsound(soundfile) {
 
-  if(document.getElementById('soundvar').checked)    {
-    //  Nothing to hear here.
-    
-    return;
-  } else {
-    soundfile.play();
-  }
+    if (document.getElementById('soundvar').checked) {
+        //  Nothing to hear here.
+
+        return;
+    } else {
+        soundfile.play();
+    }
 }
 
 
 function soundSwitch() {
-  if(document.getElementById('soundvar').checked) 
-{ 
-// sound off
+    if (document.getElementById('soundvar').checked) {
+        // sound off
 
-    document.getElementById("speakerimg").setAttribute("src","assets/images/soundon.png");
-    document.getElementById("soundvar").checked = false;
-  
+        document.getElementById("speakerimg").setAttribute("src", "assets/images/soundon.png");
+        document.getElementById("soundvar").checked = false;
 
-} else {
- // sound on
 
-       document.getElementById("speakerimg").setAttribute("src","assets/images/soundoff.png");
-      document.getElementById("soundvar").checked = true;
-   
- 
+    } else {
+        // sound on
+
+        document.getElementById("speakerimg").setAttribute("src", "assets/images/soundoff.png");
+        document.getElementById("soundvar").checked = true;
+
+
 
     }
 }
@@ -62,198 +61,199 @@ function soundSwitch() {
 // countdown timer.
 function timer() {
 
-  //timeleft counter starts at 60
+    //timeleft counter starts at 60
 
-  document.getElementById("invisibletimer").style.visibility = "visible";
+    document.getElementById("invisibletimer").style.visibility = "visible";
 
-  var downloadTimer = setInterval(function () {
-    if (timeleft <= 1) {
-      clearInterval(downloadTimer);
-    }
-    document.getElementById("progressBar").value = (60 - timeleft) + 1;
-    timeleft -= 1;
+    var downloadTimer = setInterval(function() {
+        if (timeleft <= 1) {
+            clearInterval(downloadTimer);
+        }
+        document.getElementById("progressBar").value = (60 - timeleft) + 1;
+        timeleft -= 1;
 
-    if ((ThegameIsOver === false) && (timeleft < 1)) {
-      // the user has just failed - game over.
-     // gameOver.play();
-      playsound(gameOver);
+        if ((ThegameIsOver === false) && (timeleft < 1)) {
+            // the user has just failed - game over.
+            // gameOver.play();
+            playsound(gameOver);
 
-      ThegameIsOver = true;
-      document.getElementById("GameContent").style = "visibility:hidden";
-      document.getElementById("introBox").style = "display:block";
-      document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
-      document.getElementById("FrontInfoBox").setAttribute("class", "gameoverflash");
-      document.getElementById("startGameButton").style = "margin-left:0%;";
-      document.getElementById("feedback").style = "visibility:hidden;";
-      QuestionIndex = 0;
-      document.getElementById("savescore").style = "visibility:visible";
-    }
+            ThegameIsOver = true;
+            document.getElementById("GameContent").style = "visibility:hidden";
+            document.getElementById("introBox").style = "display:block";
+            document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
+            document.getElementById("FrontInfoBox").setAttribute("class", "gameoverflash");
+            document.getElementById("startGameButton").style = "margin-left:0%;";
+            document.getElementById("feedback").style = "visibility:hidden;";
+            QuestionIndex = 0;
+            document.getElementById("savescore").style = "visibility:visible";
+        }
 
-    // if our counter gets  below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
-    if (timeleft < 0) {
-      timeleft = 0;
-    }
-    document.getElementById("counter").innerText = timeleft + " seconds";
-  }, 1000);
+        // if our counter gets  below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
+        if (timeleft < 0) {
+            timeleft = 0;
+        }
+        document.getElementById("counter").innerText = timeleft + " seconds";
+    }, 1000);
 
 }
 
 
 
 function rollQuestions() {
-  // get current question object from array
-  var currentQuestion = questions[QuestionIndex];
-  var ShowThisQuestion = QuestionIndex + 1;
-  document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
-  document.getElementById("question-title").innerText = currentQuestion.title;
-  var theChoices = document.getElementById("choices");
-  theChoices.innerHTML = "";
+    // get current question object from array
+    var currentQuestion = questions[QuestionIndex];
+    var ShowThisQuestion = QuestionIndex + 1;
+    document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
+    document.getElementById("question-title").innerText = currentQuestion.title;
+    var theChoices = document.getElementById("choices");
+    theChoices.innerHTML = "";
 
-  // loop over choices
-  currentQuestion.choices.forEach(function (choice, i) {
-    // appemd buttons using bootstrap design and move margin slightly left
-    var choiceNode = document.createElement("button");
-    choiceNode.setAttribute("value", choice);
-    choiceNode.setAttribute("class", "btn btn-light buttonPadding");
-    choiceNode.setAttribute("style","margin:1%;")
-    choiceNode.setAttribute("id", "Btn" + i)
+    // loop over choices
+    currentQuestion.choices.forEach(function(choice, i) {
+        // appemd buttons using bootstrap design and move margin slightly left
+        var choiceNode = document.createElement("button");
+        choiceNode.setAttribute("value", choice);
+        choiceNode.setAttribute("class", "btn btn-light buttonPadding");
+        choiceNode.setAttribute("style", "margin:1%;")
+        choiceNode.setAttribute("id", "Btn" + i)
 
-    // add choice array data and text content
-    choiceNode.textContent = i + 1 + ". " + choice;
+        // add choice array data and text content
+        choiceNode.textContent = i + 1 + ". " + choice;
 
-    // add trigger to fire off new event
-    choiceNode.onclick = questionClickFunction;
+        // add trigger to fire off new event
+        choiceNode.onclick = questionClickFunction;
 
-    // dump it to the page
-    theChoices.appendChild(choiceNode);
-  });
+        // dump it to the page
+        theChoices.appendChild(choiceNode);
+    });
 }
 
 function questionClickFunction() {
 
-  // ok you've had your fun. now disable to div so you can't have a second shot until the next go.
-  $('#choices').children().attr('disabled', 'disabled');
+    // ok you've had your fun. now disable to div so you can't have a second shot until the next go.
+    $('#choices').children().attr('disabled', 'disabled');
 
-  // erm - is it OK?
-  ResponseBox.setAttribute("style", "visibility:visible");
-  if (this.value !== questions[QuestionIndex].answer) {
+    // erm - is it OK?
+    ResponseBox.setAttribute("style", "visibility:visible");
+    if (this.value !== questions[QuestionIndex].answer) {
 
-    // nope - not cool - got it wrong. 
+        // nope - not cool - got it wrong. 
 
-    timeleft -= 15;
+        timeleft -= 15;
 
 
-    // too bad, so sad, you got it wrong. add the nasty shake.
+        // too bad, so sad, you got it wrong. add the nasty shake.
 
-    document.getElementById(this.id).classList.add('apply-shake');
-    document.getElementById("counter").classList.add('explode');
+        document.getElementById(this.id).classList.add('apply-shake');
+        document.getElementById("counter").classList.add('explode');
 
-    // because javascript is shit, any element class added and them removed will automatically overide the existing effect. subsequently,
-    // a timeout needs to be called to allow the initial effect to occur and then to provide enough time for the class to be removed
-    // for next time around.
+        // because javascript is shit, any element class added and them removed will automatically overide the existing effect. subsequently,
+        // a timeout needs to be called to allow the initial effect to occur and then to provide enough time for the class to be removed
+        // for next time around.
 
-    setTimeout(function () {
-      document.getElementById("counter").classList.remove('explode');
-    }, 1000);
+        setTimeout(function() {
+            document.getElementById("counter").classList.remove('explode');
+        }, 1000);
 
-    // play you stuffed up sound effect
-    //sfxWrong.play();
-    playsound(sfxWrong);
+        // play you stuffed up sound effect
+        //sfxWrong.play();
+        playsound(sfxWrong);
 
-    ResponseBox.setAttribute("style", "color:red");
-    ResponseBox.textContent = "Wrong!";
-  } else {
-    // play "right" sound effect
-    //sfxRight.play();
-    playsound(sfxRight);
+        ResponseBox.setAttribute("style", "color:red");
+        ResponseBox.textContent = "Wrong!";
+    } else {
+        // play "right" sound effect
+        //sfxRight.play();
+        playsound(sfxRight);
 
-    ResponseBox.setAttribute("style", "color:#94a294");
-    ResponseBox.textContent = "Correct!";
-    // document.getElementById("marioImage").style = "visibility:visible";
-    score = score + 1;
-    document.getElementById("score").innerHTML = "Score : " + score;
-  }
+        ResponseBox.setAttribute("style", "color:#94a294");
+        ResponseBox.textContent = "Correct!";
+        // document.getElementById("marioImage").style = "visibility:visible";
+        score = score + 1;
+        document.getElementById("score").innerHTML = "Score : " + score;
+    }
 
-  // flash right/wrong feedback on page for half a second
+    // flash right/wrong feedback on page for half a second
 
-  setTimeout(function () {
-    ResponseBox.setAttribute("style", "visibility:hidden");
-  }, 2000);
-
-  // move to next question
-  QuestionIndex++;
-
-  // check if we've run out of questions
-  if (QuestionIndex === questions.length) {
-    // not good dave - we have run out of questions - and you said this would never happen...
-    timeleft = 0;
-
-  } else {
-    setTimeout(() => {
-      rollQuestions();
-      // because tre said that the timer does not pause during the questions process
-      // i've just added two seconds to the clock. the delay is important because
-      // the effects will not work without it. 
-      // because javascript is not procedural - like that's a good thing.
-
-      timeleft = timeleft + 2;
+    setTimeout(function() {
+        ResponseBox.setAttribute("style", "visibility:hidden");
     }, 2000);
-  }
+
+    // move to next question
+    QuestionIndex++;
+
+    // check if we've run out of questions
+    if (QuestionIndex === questions.length) {
+        // not good dave - we have run out of questions - and you said this would never happen...
+        timeleft = 0;
+
+    } else {
+        setTimeout(() => {
+            rollQuestions();
+            // because tre said that the timer does not pause during the questions process
+            // i've just added two seconds to the clock. the delay is important because
+            // the effects will not work without it. 
+            // because javascript is not procedural - like that's a good thing.
+
+            timeleft = timeleft + 2;
+        }, 2000);
+    }
 }
 
 function startGame() {
 
-  // check to see if the input field is ready.
-  var userinput = document.getElementById("initials").value;
 
-  // check if user has populated the input field
+    // check to see if the input field is ready.
+    var userinput = document.getElementById("initials").value;
 
-   
-if (userinput) {
-
-// change the play button startGameButton to something else
-document.getElementById("startGameButton").innerHTML = "Try Again";
+    // check if user has populated the input field
 
 
-// get the date of smashing record
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
+    if (userinput) {
 
-today = dd + '/' + mm + '/' + yyyy;
+        // change the play button startGameButton to something else
+        document.getElementById("startGameButton").innerHTML = "Try Again";
 
 
-  // get what we have in storage
-  var getStorageInfo = localStorage["browsergame"];
- 
-  // if getStorageInfo is not empty then parse json otherwise set as empty array
-  var results = getStorageInfo ? JSON.parse(getStorageInfo) : [];
+        // get the date of smashing record
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
 
-  // search for previous result
-  const old = results.find((r) => r.ui === userinput);
-
-      // otherwise push in the array new results
-      results.push({ ui: userinput, score: score, dmy : today });    
-  
-
-  // replace by new results
-  localStorage["browsergame"] = JSON.stringify(results);
-}
+        today = dd + '/' + mm + '/' + yyyy;
 
 
-  // set conditions for new game
+        // get what we have in storage
+        var getStorageInfo = localStorage["browsergame"];
 
-  ThegameIsOver = false;
-  score = 0;
-  timeleft = 60;
+        // if getStorageInfo is not empty then parse json otherwise set as empty array
+        var results = getStorageInfo ? JSON.parse(getStorageInfo) : [];
 
-  document.getElementById("score").innerHTML = "Score : " + score;
-  document.getElementById("GameContent").style = "visibility:visible";
-  startTheDrums();
-  timer();
-  document.getElementById("introBox").style = "display:none;"
-  rollQuestions();
+        // search for previous result
+        const old = results.find((r) => r.ui === userinput);
+
+        // otherwise push in the array new results
+        results.push({ ui: userinput, score: score, dmy: today });
+
+
+        // replace by new results
+        localStorage["browsergame"] = JSON.stringify(results);
+    }
+
+
+    // set conditions for new game
+
+    ThegameIsOver = false;
+    score = 0;
+    timeleft = 60;
+
+    document.getElementById("score").innerHTML = "Score : " + score;
+    document.getElementById("GameContent").style = "visibility:visible";
+    startTheDrums();
+    timer();
+    document.getElementById("introBox").style = "display:none;"
+    rollQuestions();
 
 
 }
