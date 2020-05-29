@@ -28,9 +28,8 @@ function getTheHighScores() {
                 var myelement = document.createElement("div");
                 myelement.innerHTML = theName + " ...  " + theScore + " ...  " + theDate;
                 var appendthis = document.getElementById("theList");
-                if ((theName) !== "undefined") && ((theName) !== "") {
-                    appendthis.appendChild(myelement);
-                }
+                appendthis.appendChild(myelement);
+
 
             }
         }
