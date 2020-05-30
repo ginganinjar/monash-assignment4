@@ -74,6 +74,12 @@ var questions = [{
         choices: ["Boolean Type", "Null Type", "Number Type", "Object Type", "Undefined Type"],
         answer: "Object Type"
     }
+    ,
+    {
+        title: "REST Architecture stands for",
+        choices: ["REpresentational State Transfer", "Real Asychncronous Send & Transmit", "Really Exciting STuff "],
+        answer: "REpresentational State Transfer"
+    }
 
 
 ];

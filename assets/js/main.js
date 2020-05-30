@@ -58,19 +58,21 @@ function soundSwitch() {
 }
 
 
-// countdown timer.
-function timer() {
+function rendertime() {
+// set time clock here
 
-    //timeleft counter starts at 60
+}
 
-    document.getElementById("invisibletimer").style.visibility = "visible";
+function endTheGame() {
 
-    var downloadTimer = setInterval(function() {
-        if (timeleft <= 1) {
-            clearInterval(downloadTimer);
-        }
-        document.getElementById("progressBar").value = (60 - timeleft) + 1;
-        timeleft -= 1;
+
+}
+
+
+function Thetimer() {
+// rewrote this function to allow for the termination of the timer as before it was embedded in the loop.
+
+    var timerRunningFunction = function () {
 
         if ((ThegameIsOver === false) && (timeleft < 1)) {
             // the user has just failed - game over.
@@ -87,15 +89,21 @@ function timer() {
             QuestionIndex = 0;
             document.getElementById("savescore").style = "visibility:visible";
         }
+     
 
-        // if our counter gets  below 0, then reset it and bring it back to 0 so it looks nice and ok - it's also an indication 
-        if (timeleft < 0) {
-            timeleft = 0;
-        }
-        document.getElementById("counter").innerText = timeleft + " seconds";
-    }, 1000);
+        if (timeleft > 0) {
+        timeleft --;
+      
 
+        } else
+              { timeleft = 0; }
+           document.getElementById("progressBar").value = (60 - timeleft) + 1;
+           document.getElementById("counter").innerText = timeleft + " seconds";   
+      };
+
+    timer = setInterval(timerRunningFunction, 1000);
 }
+
 
 
 
@@ -125,6 +133,7 @@ function rollQuestions() {
 
         // dump it to the page
         theChoices.appendChild(choiceNode);
+ 
     });
 }
 
@@ -135,8 +144,12 @@ function questionClickFunction() {
 
     // erm - is it OK?
     ResponseBox.setAttribute("style", "visibility:visible");
+    // pause the timer
+
+
     if (this.value !== questions[QuestionIndex].answer) {
 
+            
         // nope - not cool - got it wrong. 
 
         timeleft -= 15;
@@ -162,13 +175,11 @@ function questionClickFunction() {
         ResponseBox.setAttribute("style", "color:red");
         ResponseBox.textContent = "Wrong!";
     } else {
-        // play "right" sound effect
-        //sfxRight.play();
+
         playsound(sfxRight);
 
         ResponseBox.setAttribute("style", "color:#94a294");
         ResponseBox.textContent = "Correct!";
-        // document.getElementById("marioImage").style = "visibility:visible";
         score = score + 1;
         document.getElementById("score").innerHTML = "Score : " + score;
     }
@@ -177,6 +188,7 @@ function questionClickFunction() {
 
     setTimeout(function() {
         ResponseBox.setAttribute("style", "visibility:hidden");
+
     }, 2000);
 
     // move to next question
@@ -186,16 +198,15 @@ function questionClickFunction() {
     if (QuestionIndex === questions.length) {
         // not good dave - we have run out of questions - and you said this would never happen...
         timeleft = 0;
-
+ 
     } else {
         setTimeout(() => {
-            rollQuestions();
+          
+          rollQuestions();
             // because tre said that the timer does not pause during the questions process
             // i've just added two seconds to the clock. the delay is important because
             // the effects will not work without it. 
             // because javascript is not procedural - like that's a good thing.
-
-            timeleft = timeleft + 2;
         }, 2000);
     }
 }
@@ -212,6 +223,7 @@ function startGame() {
     if (userinput) {
 
         // change the play button startGameButton to something else
+        document.querySelector("introBox").style = "visibility:hidden";
         document.getElementById("startGameButton").innerHTML = "Try Again";
 
 
@@ -251,11 +263,10 @@ function startGame() {
     document.getElementById("score").innerHTML = "Score : " + score;
     document.getElementById("GameContent").style = "visibility:visible";
     startTheDrums();
-    timer();
+    Thetimer();
     document.getElementById("introBox").style = "display:none;"
     rollQuestions();
-
-
+   
 }
 
 
