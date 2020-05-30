@@ -13,18 +13,6 @@ var playerScore = document.getElementById("score").innerHTML;
 var score = 0;
 var ThegameIsOver = false;
 
-// javascript seems to prohibit sound effects unless they are manually executed by the user and need to be loaded in the buffer to fire correctly.
-// as such, this routine plays all sound effects at the same time to load them up so they trigger correctly when the game is in execution.
-
-function startTheDrums() {
-
-    sfxRight.play();
-    sfxWrong.play();
-    gameOver.play();
-    startSound.play();
-    gameOver.pause();
-
-}
 
 function playsound(soundfile) {
 
@@ -33,7 +21,16 @@ function playsound(soundfile) {
 
         return;
     } else {
-        soundfile.play();
+    if (soundfile == "correct") {
+        sfxRight.play();
+        } else if (soundfile == "wrong") {
+            sfxWrong.play();
+        } else if (soundfile == "over") {
+            gameOver.play();
+        } else if (soudfile = "startgame") {
+            startSound.play();
+
+        }
     }
 }
 
@@ -41,31 +38,15 @@ function playsound(soundfile) {
 function soundSwitch() {
     if (document.getElementById('soundvar').checked) {
         // sound off
-
         document.getElementById("speakerimg").setAttribute("src", "assets/images/soundon.png");
         document.getElementById("soundvar").checked = false;
 
 
     } else {
         // sound on
-
         document.getElementById("speakerimg").setAttribute("src", "assets/images/soundoff.png");
         document.getElementById("soundvar").checked = true;
-
-
-
     }
-}
-
-
-function rendertime() {
-// set time clock here
-
-}
-
-function endTheGame() {
-
-
 }
 
 
@@ -77,7 +58,7 @@ function Thetimer() {
         if ((ThegameIsOver === false) && (timeleft < 1)) {
             // the user has just failed - game over.
             // gameOver.play();
-            playsound(gameOver);
+            playsound("over");
 
             ThegameIsOver = true;
             document.getElementById("GameContent").style = "visibility:hidden";
@@ -113,17 +94,31 @@ function rollQuestions() {
     var ShowThisQuestion = QuestionIndex + 1;
     document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
     document.getElementById("question-title").innerText = currentQuestion.title;
+   
     var theChoices = document.getElementById("choices");
     theChoices.innerHTML = "";
 
     // loop over choices
     currentQuestion.choices.forEach(function(choice, i) {
         // appemd buttons using bootstrap design and move margin slightly left
+       
+       // get the correct answer
+        var theAnswer = currentQuestion.answer;
+       
         var choiceNode = document.createElement("button");
         choiceNode.setAttribute("value", choice);
         choiceNode.setAttribute("class", "btn btn-light buttonPadding");
         choiceNode.setAttribute("style", "margin:1%;")
         choiceNode.setAttribute("id", "Btn" + i)
+        if (theAnswer === choice) {
+            // bind action to play sound effect to the button
+            // this will resolve the issue with the first question not firing
+            // the sound effect correctly
+            choiceNode.addEventListener("click", function () { playsound("correct") }, false);
+        } else {
+            choiceNode.addEventListener("click", function () { playsound("wrong") }, false);
+        }
+
 
         // add choice array data and text content
         choiceNode.textContent = i + 1 + ". " + choice;
@@ -160,7 +155,7 @@ function questionClickFunction() {
         document.getElementById(this.id).classList.add('apply-shake');
         document.getElementById("counter").classList.add('explode');
 
-        // because javascript is shit, any element class added and them removed will automatically overide the existing effect. subsequently,
+        // because javascript is, any element class added and them removed will automatically overide the existing effect. subsequently,
         // a timeout needs to be called to allow the initial effect to occur and then to provide enough time for the class to be removed
         // for next time around.
 
@@ -168,15 +163,11 @@ function questionClickFunction() {
             document.getElementById("counter").classList.remove('explode');
         }, 1000);
 
-        // play you stuffed up sound effect
-        //sfxWrong.play();
-        playsound(sfxWrong);
 
         ResponseBox.setAttribute("style", "color:red");
         ResponseBox.textContent = "Wrong!";
     } else {
 
-        playsound(sfxRight);
 
         ResponseBox.setAttribute("style", "color:#94a294");
         ResponseBox.textContent = "Correct!";
@@ -203,17 +194,14 @@ function questionClickFunction() {
         setTimeout(() => {
           
           rollQuestions();
-            // because tre said that the timer does not pause during the questions process
-            // i've just added two seconds to the clock. the delay is important because
-            // the effects will not work without it. 
-            // because javascript is not procedural - like that's a good thing.
+          
         }, 2000);
     }
 }
 
 function startGame() {
 
-
+    playsound("statgame");
     // check to see if the input field is ready.
     var userinput = document.getElementById("initials").value;
 
@@ -224,9 +212,8 @@ function startGame() {
 
         // change the play button startGameButton to something else
         document.querySelector("introBox").style = "visibility:hidden";
-        document.getElementById("startGameButton").innerHTML = "Try Again";
-
-
+        document.querySelector("startGameButton").innerHTML = "Try Again";
+       
         // get the date of smashing record
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -262,7 +249,6 @@ function startGame() {
 
     document.getElementById("score").innerHTML = "Score : " + score;
     document.getElementById("GameContent").style = "visibility:visible";
-    startTheDrums();
     Thetimer();
     document.getElementById("introBox").style = "display:none;"
     rollQuestions();
