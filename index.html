@@ -16,67 +16,67 @@
   <div class="twinkling"></div>
   <div class="clouds"></div>
 
-    <div class="row leanLeft">
-      <div class="col-md-12">
-        <a href="hscores.html" class="gameFont nice highscoreURL" >High Scores</a>
-        <div id="sound" class="soundicon leanright">
-          <img src="assets/images/soundon.png" alt="Sound volume icon" id="speakerimg" width="50" height="50"> 
-          <input type="checkbox" id="soundvar" style="visibility:hidden"/>
+  <div class="row leanLeft">
+    <div class="col-md-12">
+      <a href="hscores.html" class="gameFont nice highscoreURL">High Scores</a>
+      <div id="sound" class="soundicon leanright">
+        <img src="assets/images/soundon.png" alt="Sound volume icon" id="speakerimg" width="50" height="50">
+        <input type="checkbox" id="soundvar" style="visibility:hidden" />
       </div>
     </div>
+  </div>
+  <!-- the progress bar and coundown counter -->
+
+  <div class="row fixedexplodingtext">
+    <div class="col-md-12">
+      <div id="invisibletimer" style="visibility:hidden"></div>
     </div>
-        <!-- the progress bar and coundown counter -->
-     
-        <div class="row fixedexplodingtext">
-          <div class="col-md-12">
-            <div id="invisibletimer" style="visibility:hidden"></div>
-          </div>
-        </div>
-        <div class="row leanLeft">
-          <div class="col-md-12">
+  </div>
+  <div class="row leanLeft">
+    <div class="col-md-12">
 
-       
-          <div id="counter" class="gameFont extrafic">60 Seconds</div>
-          <progress value="0" max="60" id="progressBar" class="progressbar" style="width:30%;"></progress>
-          <div id="score" class="gameFont extrafic">Score : 0</div>
-        </div>
-      </div>
-    
 
-<!-- text stuff content used for questioms and notification -->
+      <div id="counter" class="gameFont extrafic">60 Seconds</div>
+      <progress value="0" max="60" id="progressBar" class="progressbar" style="width:30%;"></progress>
+      <div id="score" class="gameFont extrafic">Score : 0</div>
+    </div>
+  </div>
 
-     <div class="container fluid leanleft"> 
+
+  <!-- text stuff content used for questioms and notification -->
+
+  <div class="container fluid leanleft">
     <div class="row FloatCenter">
       <div id="textstuff" class="col-sm-12 fixmargins">
         <div id="introBox">
-       
-         
+
+
           <p class="directionFont" id="FrontInfoBox"> <b class="introtitle">Coding Quiz Challenge </b><br><br>
             Answer the following code-related questions within the time limit. <br><br>
-           You'll lose 10 seconds for every wrong answer. 
+            You'll lose 10 seconds for every wrong answer.
           </p>
-         
-   
-          <div id="savescore" class="hiddencontent">  
-          <p class="directionFont">
-            High Score - Enter Initials : <input type="text" id="initials" class="savehighscoreInput"/>
-          </p>
-       
-       
-        </div>
-   
+
+
+          <div id="savescore" class="hiddencontent">
+            <p class="directionFont">
+              High Score - Enter Initials : <input type="text" id="initials" class="savehighscoreInput" />
+            </p>
+
+
+          </div>
+
           <button type="button" class="btn btn-light buttonMove" id="startGameButton">Play Game</button>
         </div>
 
         <div id="GameContent">
           <div id="questionNumber" class="gameFontQuestionTitle"></div>
           <div id="question-title" class="directionFont"></div>
-  
-         <div id="choices" class="directionFont buttonsOver"></div>
+
+          <div id="choices" class="directionFont buttonsOver"></div>
 
           <div id="questions" class="hide">
             <div id="feedback" class="feedbackFont" style="visibility:hidden"></div>
-       
+
           </div>
         </div>
       </div>
