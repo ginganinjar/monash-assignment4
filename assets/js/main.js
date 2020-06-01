@@ -201,6 +201,10 @@ function questionClickFunction() {
 
 function startGame() {
 
+    function isHidden(el) {
+        return (el.offsetParent === null)
+    }
+
     playsound("statgame");
     // check to see if the input field is ready.
     var userinput = document.getElementById("initials").value;
@@ -210,10 +214,6 @@ function startGame() {
 
     if (userinput) {
 
-        // change the play button startGameButton to something else
-        document.querySelector("introBox").style = "visibility:hidden";
-        document.querySelector("startGameButton").innerHTML = "Try Again";
-       
         // get the date of smashing record
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -250,7 +250,11 @@ function startGame() {
     document.getElementById("score").innerHTML = "Score : " + score;
     document.getElementById("GameContent").style = "visibility:visible";
     Thetimer();
+   
+    if (isHidden("introBox") === false) {
     document.getElementById("introBox").style = "display:none;"
+    }
+
     rollQuestions();
    
 }
