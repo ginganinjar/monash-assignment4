@@ -11,35 +11,26 @@ function getTheHighScores() {
         // sort array based on best scores
         var byScore = getStorageInfo.slice(0);
         
-        byScore.sort(function(a, b) {
-            return b.score - a.score;
-        });
-
-        for (i = 0; i > 7; i++) {
-
-            // get the name and score of players but only do top 10 records
-
-                var theName = byScore[i]["ui"];
-                var theScore = byScore[i]["score"];
-                var theDate = byScore[i]["dmy"];
+        const topScore = byScore.sort((a, b) => b.score - a.score).slice(0, 8);
+        if (topScore.length > 0) {
+            topScore.forEach((score) => {
+                var theName = score.ui;
+                var theScore = score.score;
+                var theDate = score.dmy;
                 var myelement = document.createElement("div");
-                myelement.innerHTML = theName + " ...  " + theScore + " ...  " + theDate;
+                myelement.innerHTML = theName + " ... " + theScore + " ... " + theDate;
                 var appendthis = document.getElementById("theList");
-                appendthis.appendChild(myelement);
+                appendthis.appendChild(myelement);  
+            });
+        } else {
+            var myelement = document.createElement("div");
+            myelement.innerHTML = "No high scores ... yet";
+            myelement.setAttribute("class", "highscores gameoverdahdah");
+            var appendthis = document.getElementById("theList");
+            appendthis.appendChild(myelement);  
         }
-    } else {
-        // so sad - no one has played and saved their game yet.
-        // send them a teaser.
-
-        var myelement = document.createElement("div");
-        myelement.innerHTML = "No high scores ... yet";
-        myelement.setAttribute("class", "highscores gameoverdahdah");
-        var appendthis = document.getElementById("theList");
-        appendthis.appendChild(myelement);
-
-    }
 }
-
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     getTheHighScores();
