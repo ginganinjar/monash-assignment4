@@ -1,6 +1,6 @@
 function getTheHighScores() {
     var getStorageInfo = localStorage["browsergame"];
-
+    var byScore = getStorageInfo.slice(0);
 
     if (getStorageInfo) {
 
@@ -10,7 +10,7 @@ function getTheHighScores() {
 
         // sort array based on best scores
 
-        var byScore = getStorageInfo.slice(0);
+       
         byScore.sort(function(a, b) {
             return b.score - a.score;
 
@@ -22,9 +22,9 @@ function getTheHighScores() {
 
             // get the name and score of players but only do top 10 records
             if (i < 8) {
-                theName = byScore[i]["ui"];
-                theScore = byScore[i]["score"];
-                theDate = byScore[i]["dmy"];
+                var theName = byScore[i]["ui"];
+                var theScore = byScore[i]["score"];
+                var theDate = byScore[i]["dmy"];
                 var myelement = document.createElement("div");
                 myelement.innerHTML = theName + " ...  " + theScore + " ...  " + theDate;
                 var appendthis = document.getElementById("theList");
