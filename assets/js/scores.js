@@ -17,11 +17,10 @@ function getTheHighScores() {
 
         });
 
-
-        for (i = 0; i < byScore.length; i++) {
+        for (i = 0; i > 7; i++) {
 
             // get the name and score of players but only do top 10 records
-            if (i < 8) {
+
                 var theName = byScore[i]["ui"];
                 var theScore = byScore[i]["score"];
                 var theDate = byScore[i]["dmy"];
@@ -29,9 +28,6 @@ function getTheHighScores() {
                 myelement.innerHTML = theName + " ...  " + theScore + " ...  " + theDate;
                 var appendthis = document.getElementById("theList");
                 appendthis.appendChild(myelement);
-
-
-            }
         }
     } else {
         // so sad - no one has played and saved their game yet.
@@ -44,8 +40,8 @@ function getTheHighScores() {
         appendthis.appendChild(myelement);
 
     }
-
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     getTheHighScores();
