@@ -22,7 +22,7 @@ function playSound(soundfile) {
     
     } else {
     
-        if (soundfile == "correct")             {
+        if (soundfile == "correct")         {
             sfxRight.play();
         } else if (soundfile == "wrong")    {
             sfxWrong.play();
