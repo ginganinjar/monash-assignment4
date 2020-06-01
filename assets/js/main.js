@@ -36,6 +36,7 @@ function playsound(soundfile) {
 
 
 function soundSwitch() {
+
     if (document.getElementById('soundvar').checked) {
         // sound off
         document.getElementById("speakerimg").setAttribute("src", "assets/images/soundon.png");
@@ -200,7 +201,16 @@ function questionClickFunction() {
 }
 
 function startGame() {
+// set sound attribute
+  
+let thespeaker = querySelector("#speakerimg");
+thespeaker.setAttribute("data-state", "collapsed");
 
+
+document.querySelector('#speakerimg').setAttribute("data-sstatus", "on");
+ 
+
+ 
     playsound("statgame");
     // check to see if the input field is ready.
     var userinput = document.getElementById("initials").value;
