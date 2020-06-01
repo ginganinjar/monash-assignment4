@@ -1,6 +1,6 @@
 function getTheHighScores() {
     var getStorageInfo = localStorage["browsergame"];
-    var byScore = getStorageInfo.slice(0);
+   
 
     if (getStorageInfo) {
 
@@ -9,12 +9,10 @@ function getTheHighScores() {
         getStorageInfo = JSON.parse(getStorageInfo);
 
         // sort array based on best scores
-
-       
+        var byScore = getStorageInfo.slice(0);
+        
         byScore.sort(function(a, b) {
             return b.score - a.score;
-
-
         });
 
         for (i = 0; i > 7; i++) {
