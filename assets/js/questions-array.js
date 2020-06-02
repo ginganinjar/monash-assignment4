@@ -80,6 +80,12 @@ var questions = [{
         choices: ["REpresentational State Transfer", "Real Asychncronous Send & Transmit", "Really Exciting STuff "],
         answer: "REpresentational State Transfer"
     }
+    ,
+    {
+        title: "Is JS single threaded or Multi Threaded",
+        choices: ["Single Threaded", "Multi Threaded"],
+        answer: "Single Threaded"
+    }
 
 
 ];
