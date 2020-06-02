@@ -1,35 +1,35 @@
 // set global variables
 
 var timeleft = 60;
-var QuestionIndex = 0;
+var questionIndex = 0;
 var questionsEl = document.getElementById("questions");
 var sfxRight = new Audio("assets/sfx/correct.wav");
 var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 var gameOver = new Audio("assets/sfx/gameover.wav");
 var startSound = new Audio("assets/sfx/start.wav");
 
-var ResponseBox = document.getElementById("feedback");
+var responseBox = document.getElementById("feedback");
 var playerScore = document.getElementById("score").innerHTML;
 var score = 0;
-var ThegameIsOver = false;
+var thegameIsOver = false;
 
 
-function playsound(soundfile) {
+function playSound(soundfile) {
 
     if (document.getElementById('soundvar').checked) {
         //  Nothing to hear here.
-
-        return;
+     return;
+    
     } else {
-    if (soundfile == "correct") {
-        sfxRight.play();
-        } else if (soundfile == "wrong") {
+    
+        if (soundfile == "correct")         {
+            sfxRight.play();
+        } else if (soundfile == "wrong")    {
             sfxWrong.play();
-        } else if (soundfile == "over") {
+        } else if (soundfile == "over")     {
             gameOver.play();
-        } else if (soudfile = "startgame") {
+        } else if (soudfile = "startgame")  {
             startSound.play();
-
         }
     }
 }
@@ -50,27 +50,26 @@ function soundSwitch() {
 }
 
 
-function Thetimer() {
+function thetimer() {
 // rewrote this function to allow for the termination of the timer as before it was embedded in the loop.
 
     var timerRunningFunction = function () {
 
-        if ((ThegameIsOver === false) && (timeleft < 1)) {
+        if ((thegameIsOver === false) && (timeleft < 1)) {
             // the user has just failed - game over.
             // gameOver.play();
-            playsound("over");
+            playSound("over");
 
-            ThegameIsOver = true;
+            thegameIsOver = true;
             document.getElementById("GameContent").style = "visibility:hidden";
             document.getElementById("introBox").style = "display:block";
             document.getElementById("FrontInfoBox").innerHTML = "GAME OVER <br> Final Score : " + score;
             document.getElementById("FrontInfoBox").setAttribute("class", "gameoverflash");
             document.getElementById("startGameButton").style = "margin-left:0%;";
             document.getElementById("feedback").style = "visibility:hidden;";
-            QuestionIndex = 0;
+            questionIndex = 0;
             document.getElementById("savescore").style = "visibility:visible";
-        }
-     
+        }  
 
         if (timeleft > 0) {
         timeleft --;
@@ -81,18 +80,15 @@ function Thetimer() {
            document.getElementById("progressBar").value = (60 - timeleft) + 1;
            document.getElementById("counter").innerText = timeleft + " seconds";   
       };
-
+    // the time is set to go off every 1 second which brings the timer value down
     timer = setInterval(timerRunningFunction, 1000);
 }
 
-
-
-
 function rollQuestions() {
     // get current question object from array
-    var currentQuestion = questions[QuestionIndex];
-    var ShowThisQuestion = QuestionIndex + 1;
-    document.getElementById("questionNumber").innerText = "Q" + ShowThisQuestion;
+    var currentQuestion = questions[questionIndex];
+    var showThisQuestion = questionIndex + 1;
+    document.getElementById("questionNumber").innerText = "Q" + showThisQuestion;
     document.getElementById("question-title").innerText = currentQuestion.title;
    
     var theChoices = document.getElementById("choices");
@@ -100,7 +96,7 @@ function rollQuestions() {
 
     // loop over choices
     currentQuestion.choices.forEach(function(choice, i) {
-        // appemd buttons using bootstrap design and move margin slightly left
+    // appemd buttons using bootstrap design and move margin slightly left
        
        // get the correct answer
         var theAnswer = currentQuestion.answer;
@@ -114,11 +110,10 @@ function rollQuestions() {
             // bind action to play sound effect to the button
             // this will resolve the issue with the first question not firing
             // the sound effect correctly
-            choiceNode.addEventListener("click", function () { playsound("correct") }, false);
+            choiceNode.addEventListener("click", function () { playSound("correct") }, false);
         } else {
-            choiceNode.addEventListener("click", function () { playsound("wrong") }, false);
+            choiceNode.addEventListener("click", function () { playSound("wrong") }, false);
         }
-
 
         // add choice array data and text content
         choiceNode.textContent = i + 1 + ". " + choice;
@@ -138,17 +133,15 @@ function questionClickFunction() {
     $('#choices').children().attr('disabled', 'disabled');
 
     // erm - is it OK?
-    ResponseBox.setAttribute("style", "visibility:visible");
+    responseBox.setAttribute("style", "visibility:visible");
     // pause the timer
 
 
-    if (this.value !== questions[QuestionIndex].answer) {
-
-            
+    if (this.value !== questions[questionIndex].answer) {
+           
         // nope - not cool - got it wrong. 
 
         timeleft -= 15;
-
 
         // too bad, so sad, you got it wrong. add the nasty shake.
 
@@ -163,14 +156,14 @@ function questionClickFunction() {
             document.getElementById("counter").classList.remove('explode');
         }, 1000);
 
-
-        ResponseBox.setAttribute("style", "color:red");
-        ResponseBox.textContent = "Wrong!";
+        responseBox.setAttribute("style", "color:red");
+        responseBox.textContent = "Wrong!";
+   
+   
     } else {
 
-
-        ResponseBox.setAttribute("style", "color:#94a294");
-        ResponseBox.textContent = "Correct!";
+        responseBox.setAttribute("style", "color:#94a294");
+        responseBox.textContent = "Correct!";
         score = score + 1;
         document.getElementById("score").innerHTML = "Score : " + score;
     }
@@ -178,25 +171,25 @@ function questionClickFunction() {
     // flash right/wrong feedback on page for half a second
 
     setTimeout(function() {
-        ResponseBox.setAttribute("style", "visibility:hidden");
+        responseBox.setAttribute("style", "visibility:hidden");
 
     }, 2000);
 
     // move to next question
-    QuestionIndex++;
+    questionIndex++;
 
     // check if we've run out of questions
-    if (QuestionIndex === questions.length) {
+    if (questionIndex === questions.length) {
         // not good dave - we have run out of questions - and you said this would never happen...
         timeleft = 0;
  
     } else {
+
         setTimeout(() => {
+        rollQuestions();
           
-          rollQuestions();
-          
-        }, 2000);
-    }
+                    }, 2000);
+            }
 }
 
 function startGame() {
@@ -205,12 +198,11 @@ function startGame() {
         return (el.offsetParent === null)
     }
 
-    playsound("statgame");
+    playSound("statgame");
     // check to see if the input field is ready.
     var userinput = document.getElementById("initials").value;
 
     // check if user has populated the input field
-
 
     if (userinput) {
 
@@ -221,7 +213,6 @@ function startGame() {
         var yyyy = today.getFullYear();
 
         today = dd + '/' + mm + '/' + yyyy;
-
 
         // get what we have in storage
         var getStorageInfo = localStorage["browsergame"];
@@ -235,7 +226,6 @@ function startGame() {
         // otherwise push in the array new results
         results.push({ ui: userinput, score: score, dmy: today });
 
-
         // replace by new results
         localStorage["browsergame"] = JSON.stringify(results);
     }
@@ -243,13 +233,13 @@ function startGame() {
 
     // set conditions for new game
 
-    ThegameIsOver = false;
+    thegameIsOver = false;
     score = 0;
     timeleft = 60;
 
     document.getElementById("score").innerHTML = "Score : " + score;
     document.getElementById("GameContent").style = "visibility:visible";
-    Thetimer();
+    thetimer();
    
     if (isHidden("introBox") === false) {
     document.getElementById("introBox").style = "display:none;"
@@ -259,9 +249,7 @@ function startGame() {
    
 }
 
-
-
-
+// add event listeners 
 
 startGameButton.addEventListener("click", startGame, false);
 speakerimg.addEventListener("click", soundSwitch, false);
